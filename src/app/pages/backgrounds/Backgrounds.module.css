@@ -1,0 +1,29 @@
+.bgTimekepper {
+    background-image: url('../../assets/image/abstractTimekeeper.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bgPattern {
+    background-image: url('../../assets/image/backgroundPattern.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.bgBack {
+    background-image: url('../../assets/image/test.jpg');
+    position: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bgGrad1 {
+    background: linear-gradient(to bottom, #1e2326, #050404);
+}
+.bgGrad2 {
+    background: linear-gradient(to bottom, #050404, black);
+}

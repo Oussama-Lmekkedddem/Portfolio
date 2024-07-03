@@ -1,0 +1,50 @@
+.st-social-group {
+    background-color: var(--background-social-link-color);
+    border: 1px solid var(--button-border-social-link-color);
+    border-radius: 50px;
+    max-width: 448px;
+    min-width: 80px;
+}
+
+.st-social-btn {
+    border-radius: 50px;
+    background-color: var(--button-background-social-link-color);
+    border: 1px solid var(--button-border-social-link-color);
+    transition:all 0.4s ease;
+    overflow: hidden;
+}
+
+.st-social-btn:hover {
+    border: 1px solid var(--hover-social-link-color);
+}
+.st-social-icon {
+    border-radius:50px;
+    width:50px;
+    height:50px;
+    transform: scale(1.5);
+}
+
+.st-icon-name{
+    font-weight:600;
+    overflow:hidden;
+    max-width:0;
+    transition:all 0.5s ease;
+    color: var(--hover-social-link-color);
+}
+
+.st-social-link .st-social-btn.active,.st-social-link .st-social-btn:hover{
+    color: var(--hover-social-link-color) ;
+}
+
+@media only screen and (min-width: 600px) {
+
+    .st-social-link .st-social-btn.active,.st-social-link .st-social-btn:hover{
+        padding-right:15px;
+    }
+
+    .st-social-btn.active .st-icon-name,
+    .st-social-btn:hover .st-icon-name{
+        max-width:140px
+    }
+}
+

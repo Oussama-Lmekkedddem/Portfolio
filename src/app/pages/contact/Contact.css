@@ -1,0 +1,12 @@
+.bg-contact-mesg {
+    border: 1px solid var(--button-border-social-link-color);
+    background: var(--background-social-link-color);
+}
+
+.bg-contact-mesg input,
+.bg-contact-mesg textarea,
+.bg-contact-mesg button
+{
+    border: 1px solid var(--button-border-social-link-color);
+    background: var(--button-background-social-link-color);
+}

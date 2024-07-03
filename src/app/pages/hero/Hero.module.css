@@ -1,0 +1,35 @@
+
+.bgPattern {
+    background-image: url('../../assets/image/abstractTimekeeper.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.gg {
+    width: 100%;
+    height: 17px;
+    margin-bottom: 10px;
+}
+
+.firstColor {
+    background: linear-gradient(90deg, rgb(242, 159, 255) 0%, rgb(124, 153, 255) 100%);
+}
+.secondColor {
+    background: #7e7e7e;
+}
+.thirdColor {
+    background: linear-gradient(90deg, rgb(103, 149, 220) 0%, rgb(124, 255, 196) 100%);
+}
+.lastColor {
+    background: linear-gradient(90deg, rgb(243, 184, 69) 0%, rgb(245, 57, 57) 100%);
+}
+
+.squareShape {
+    width: 17px;
+}
+.cercleShape {
+    width: 20px;
+    border-radius: 50px;
+}

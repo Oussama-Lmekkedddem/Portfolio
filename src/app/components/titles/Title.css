@@ -1,0 +1,41 @@
+.section-title {
+    color: var(--font-sub-title-color);
+}
+.text_background {
+    font-weight: 700;
+    font-size: 3em;
+    margin: 3rem 0 1rem;
+    top: -10px;
+    z-index: 1;
+}
+
+.heading_background {
+    display: block;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: transparent;
+    -webkit-text-stroke: 2px var(--font-title-color);
+    top: 0;
+    font-size: 140px;
+    font-weight: 900;
+    line-height: 0.1;
+    z-index: 0;
+}
+
+.section-title p {
+    font-size: 13px;
+}
+
+@media (max-width: 800px) {
+    .heading_background {
+        font-size: 40px;
+        top: -36%;
+    }
+    .text_background{
+        font-size: 25px;
+    }
+    .section-title p {
+        font-size: 10px;
+    }
+}
