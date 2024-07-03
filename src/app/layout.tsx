@@ -15,13 +15,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+      <html lang="en">
+      <link rel="icon" href="./../../public/icon.ico"/>
       <body className={inter.className}>
       <Backgrounds/>
       <NavBar/>
       <SideBar/>
       {children}
       </body>
-    </html>
+      </html>
   );
 }
