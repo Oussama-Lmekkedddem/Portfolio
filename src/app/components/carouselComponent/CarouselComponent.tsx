@@ -1,4 +1,4 @@
-
+'use client'
 import { TECarousel, TECarouselItem } from "tw-elements-react";
 import React, {useEffect, useRef, useState} from "react";
 import {ProjectCard} from "@/app/components";

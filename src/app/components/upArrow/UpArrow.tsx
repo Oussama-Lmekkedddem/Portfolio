@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from "react";
+import { FaAngleUp } from "react-icons/fa";
 
 const UpArrow: React.FC = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -46,7 +47,7 @@ const UpArrow: React.FC = () => {
                 <div
                     className='w-[35px] h-[35px] rounded-[8px] green-pink-gradient p-[1px] shadow-card'>
                     <div className='h-full rounded-[8px] bg-tertiary flex justify-center items-start'>
-                        <i className="bx bx-up-arrow text-2xl mt-[5px] blue-text-gradient"></i>
+                        <FaAngleUp className="text-2xl mt-[5px] blue-text-gradient"/>
                     </div>
 
                 </div>
