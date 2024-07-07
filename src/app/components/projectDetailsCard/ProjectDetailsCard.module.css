@@ -1,5 +1,5 @@
 .projectDetail{
-    z-index: 10;
+    z-index: 99999;
 }
 
 .swiperPagination {

@@ -39,7 +39,7 @@ const Contact: React.FC = () => {
     };
 
     return (
-        <section className={'pt-8 relative'}>
+        <section className={'pt-8 relative z-10'}>
             <Title title={contactTitle as Til} />
             <motion.div className={'absolute w-full h-full pl-80 pb-80 hidden md:block'}
                         variants={slideIn("down", "tween", 0.2, 1)}>

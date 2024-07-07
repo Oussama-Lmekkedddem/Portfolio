@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { fadeIn } from "@/app/utils";
 import { github } from "@/app/assets";
 import { ProjectCardProps } from "@/app/types";
+import Image from 'next/image';
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, index}) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -31,28 +32,45 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index}) => {
                     <div className='relative w-full h-[230px]'>
                         <div className='w-full h-full object-cover rounded-2xl overflow-hidden' style={{ position: "relative" }}>
                             {project.images.map((image, idx) => (
-                                <motion.img
+                                <motion.div
                                     key={idx}
-                                    src={image.src}
-                                    alt={`project_image_${idx}`}
-                                    className={`w-full h-full object-cover rounded-2xl`}
+                                    className={`w-full h-full absolute top-0 left-0 ${idx === currentImageIndex ? 'z-10' : 'z-0'}`}
                                     style={{
-                                        position: "absolute",
-                                        top: 0,
-                                        left: 0,
                                         opacity: idx === currentImageIndex ? 1 : 0,
-                                        zIndex: idx === currentImageIndex ? 1 : 0,
                                     }}
-                                    initial={{ x: 0 }}
-                                    animate={{ x: 0 }}
-                                    transition={{ duration: 2, ease: "easeInOut" }}
-                                />
+                                    initial={{x: 0}}
+                                    animate={{x: 0}}
+                                    transition={{duration: 2, ease: "easeInOut"}}
+                                >
+                                    <Image
+                                        src={image.src}
+                                        alt={`project_image_${idx}`}
+                                        layout="fill"
+                                        objectFit="cover"
+                                        className="rounded-2xl"
+                                    />
+                                </motion.div>
                             ))}
                         </div>
                         {project.source_code_link ? (
                             <div className='absolute inset-0 flex justify-end m-3 card-img_hover z-30'>
-                                <div onClick={() =>    { if (typeof window !== 'undefined') {window.open(project.source_code_link, "_blank")}}} className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'>
-                                    <img src={github.src} alt='source code' className='w-1/2 h-1/2 object-contain'/>
+                                <div
+                                    onClick={() => {
+                                        if (typeof window !== 'undefined') {
+                                            window.open(project.source_code_link, "_blank");
+                                        }
+                                    }}
+                                    className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+                                >
+                                    <div className="relative w-1/2 h-1/2">
+                                        <Image
+                                            src={github.src}
+                                            alt="source code"
+                                            layout="fill"
+                                            objectFit="contain"
+                                            className="rounded-full"
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         ) : null}

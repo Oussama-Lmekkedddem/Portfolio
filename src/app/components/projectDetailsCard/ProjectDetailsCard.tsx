@@ -4,6 +4,7 @@ import style from '@/app/components/projectDetailsCard/ProjectDetailsCard.module
 import { github } from '@/app/assets';
 import { FaFilePdf } from 'react-icons/fa';
 import { ImageModal } from '@/app/components';
+import Image from "next/image";
 
 const ProjectDetailsCard: React.FC<ProjectDetailsProps> = ({ project, closeHandler }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -67,7 +68,7 @@ const ProjectDetailsCard: React.FC<ProjectDetailsProps> = ({ project, closeHandl
 
     return (
         <>
-            <div className={style.projectDetail + " fixed inset-0 m-5 " +
+            <div className={style.projectDetail + " fixed inset-1 m-5 " +
                 "green-pink-gradient p-[1px] rounded-[20px] shadow-card"}>
                 <div className="flex flex-col bg-tertiary w-full h-full rounded-[20px]">
                     <div className="flex justify-between items-center p-3 text-gray-300">
@@ -94,14 +95,19 @@ const ProjectDetailsCard: React.FC<ProjectDetailsProps> = ({ project, closeHandl
                                 <div
                                     className="grid gap-4 col-start-1 col-end-5 row-start-1 sm:mb-6 sm:grid-cols-4 lg:gap-6 lg:col-start-2 lg:row-end-6 lg:row-span-6 lg:mb-0">
                                     {groups[activeGroupIndex].map((image, index) => (
-                                        <img
-                                            key={index}
-                                            src={image.src}
-                                            alt=""
-                                            className={style.prjImg + " " + styleImg[index % 3]}
-                                            loading="lazy"
-                                            onClick={() => openModal(activeGroupIndex * 3 + index)}
-                                        />
+                                        <div key={index} className={style.prjImg +' ' + styleImg[index % 3]}>
+                                            <div className="relative w-full h-full">
+                                                <Image
+                                                    src={image.src}
+                                                    alt=""
+                                                    layout="fill"
+                                                    objectFit="cover"
+                                                    onClick={() => openModal(activeGroupIndex * 3 + index)}
+                                                    className="rounded-2xl"
+                                                    loading="lazy"
+                                                />
+                                            </div>
+                                        </div>
                                     ))}
                                     {isModalOpen && (
                                         <ImageModal
