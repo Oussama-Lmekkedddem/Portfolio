@@ -77,8 +77,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index}) => {
                     </div>
 
                     <div className='mt-5'>
-                        <h3 className='text-white font-bold text-[24px]'>{project.name}</h3>
-                        <p className='mt-2 text-secondary text-[14px]'>{project.description}</p>
+                        <h3 className='text-[#dfd9ff] font-bold text-[24px]'>{project.name}</h3>
+                        <p className='mt-2 text-[#dfd9ff] text-secondary text-[14px]'>{project.description}</p>
                     </div>
 
                     <div className='mt-4 flex flex-wrap gap-2'>

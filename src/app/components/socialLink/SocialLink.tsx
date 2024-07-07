@@ -15,7 +15,7 @@ const SocialLinkCard: React.FC<SocialLinkCardProps> = ({ href, icon: Icon, name,
 
     return (
         <a
-            className="st-social-btn flex items-center"
+            className="st-social-btn flex text-[#dfd9ff] items-center"
             onClick={() => {if (typeof window !== 'undefined') {window.open(href, '_blank');}}}
 
             style={{ '--hover-social-link-color': hoverColor } as React.CSSProperties}
