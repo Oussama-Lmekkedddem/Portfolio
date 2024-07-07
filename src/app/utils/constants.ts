@@ -31,21 +31,24 @@ import {
     freelancer,
 
     c1, c2,
-    django1, django2, django3,
+    django1, django2, django3, django4,
     java1, java2, java3, java4, java5, java6, java7, java8, java9,
     phpc1, phpc2, phpc3, phpc4, phpc5, phpc6, phpc7,
     phpm1, phpm2, phpm3, phpm4, phpm5, phpm6, phpm7, phpm8,
     qt1, qt2,
     springf1, springf2, springf3, springf4, springf5, springf6,
+    springj1, springj2, springj3, springj4, springj5, springj6, springj7, springj8,
+    websitep1, websitep2, websitep3,
+    websites1, websites2, websites3, websites4,
     wordpressc1, wordpressc2, wordpressc3,
 } from "../assets";
 
 
 const projects = [
     {
-        name: "Management of studies at school level",
+        name: "Study-Management",
         description:
-            "Web application allows administrators, course managers and teachers to\n" +
+            "Web application allows administrators, course managers and teachers to " +
             "manage the timetable, assign modules and enter grades.",
         tags: [
             {
@@ -80,7 +83,7 @@ const projects = [
         report_link: "https://drive.google.com/file/d/1oi08J0GKSA1rgvvk3HJ3S0WE5EXBRwKj/view?usp=drive_link",
     },
     {
-        name: "Travel and Hotel Reservation Management System",
+        name: "Travel & Hotel Reservation Manag",
         description:
             "Development of a platform for booking travel and hotels, with an admin interface for complete management.",
         tags: [
@@ -110,7 +113,7 @@ const projects = [
     {
         name: "DragonBomber Game",
         description:
-            "Desktop application allows players to plant bombs to destroy\n" +
+            "Desktop application allows players to plant bombs to destroy " +
             "obstacles, eliminate enemies and achieve an objective.",
         tags: [
             {
@@ -127,15 +130,36 @@ const projects = [
             },
         ],
         images: [
-            qt1, qt2
+            qt1, qt2,
         ],
         source_code_link: "https://github.com/Oussama-Lmekkedddem/Dragon-Bomber.git",
         report_link: "",
     },
     {
+        name: "(PFE) Management & Defense Planning",
+        description:
+            "Creating final year projects (PFE) and planning defenses, " +
+            "managing students and professors, and scheduling defense timetables.",
+        tags: [
+            {
+                name: "C",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "CLion",
+                color: "pink-text-gradient",
+            },
+        ],
+        images: [
+            c1, c2
+        ],
+        source_code_link: "https://github.com/Oussama-Lmekkedddem/Gestion-des-stages-de-PFE-et-planification-des-soutenances.git",
+        report_link: "",
+    },
+    {
         name: "Financial Management",
         description:
-            "The project focuses on implementing a comprehensive financial management system. It includes\n" +
+            "The project focuses on implementing a comprehensive financial management system. It includes " +
             "managing financial accounts, transactions, balances, and client relationships.",
         tags: [
             {
@@ -192,8 +216,8 @@ const projects = [
     {
         name: "Python Project",
         description:
-            "Project management within folders. Each folder acts as an independent\n" +
-            "project, incorporating advanced features such as Face Detection, real-time Person and Object Counting in live\n" +
+            "Project management within folders. Each folder acts as an independent " +
+            "project, incorporating advanced features such as Face Detection, real-time Person and Object Counting in live " +
             "videos, and Position Detection, and more.",
         tags: [
             {
@@ -226,7 +250,7 @@ const projects = [
             },
         ],
         images: [
-            django1, django2, django3,
+            django1, django2, django3, django4,
         ],
         source_code_link: "",
         report_link: "",
@@ -254,7 +278,8 @@ const projects = [
     {
         name: "Center administration",
         description:
-            "Developing a desktop application for center administration, encompassing student, professor, module, payment, classroom, and timetable management.",
+            "Developing a desktop application for center administration, encompassing student, professor, " +
+            "module, payment, classroom, and timetable management.",
         tags: [
             {
                 name: "php",
@@ -285,6 +310,144 @@ const projects = [
             phpc1, phpc2, phpc3, phpc4, phpc5, phpc6, phpc7,
         ],
         source_code_link: "https://github.com/Oussama-Lmekkedddem/School_Administration_Project.git",
+        report_link: "",
+    },
+    {
+        name: "Exam planning",
+        description:
+            "Developing an application for exam planning, teacher, administrator, supervisor, and " +
+            "module management, including groups, absences, exam timetables, and reports.",
+        tags: [
+            {
+                name: "spring Boot",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "spring Data JPA",
+                color: "green-text-gradient",
+            },
+            {
+                name: "thymeleaf",
+                color: "pink-text-gradient",
+            },
+            {
+                name: "spring Security",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "sql",
+                color: "green-text-gradient",
+            },
+            {
+                name: "java",
+                color: "pink-text-gradient",
+            },
+            {
+                name: "bootstrap",
+                color: "violet-gradient",
+            },
+            {
+                name: "js",
+                color: "orange-text-gradient",
+            },
+            {
+                name: "html",
+                color: "green-text-gradient",
+            },
+            {
+                name: "css",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "hibernate",
+                color: "pink-text-gradient",
+            },
+        ],
+        images: [
+            springj1, springj2, springj3, springj4, springj5, springj6, springj7, springj8,
+        ],
+        source_code_link: "",
+        report_link: "",
+    },
+    {
+        name: "Image-Based E-Commerce Search",
+        description:
+            "Developing an e-commerce platform that utilizes image-based search, displaying " +
+            "products based on user-provided images.",
+        tags: [
+            {
+                name: "Python",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "Flask",
+                color: "green-text-gradient",
+            },
+            {
+                name: "Keras",
+                color: "pink-text-gradient",
+            },
+            {
+                name: "NumPy",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "PIL",
+                color: "green-text-gradient",
+            },
+            {
+                name: "Bootstrap",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "Html",
+                color: "pink-text-gradient",
+            },
+            {
+                name: "Js",
+                color: "violet-gradient",
+            },
+            {
+                name: "Css",
+                color: "orange-text-gradient",
+            },
+        ],
+        images: [
+            websitep1, websitep2, websitep3,
+        ],
+        source_code_link: "",
+        report_link: "",
+    },
+    {
+        name: "E-Shop Website",
+        description:
+            "Developing a straightforward e-shop website.",
+        tags: [
+            {
+                name: "Bootstrap",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "jQuery",
+                color: "green-text-gradient",
+            },
+            {
+                name: "Html",
+                color: "pink-text-gradient",
+            },
+            {
+                name: "Js",
+                color: "violet-gradient",
+            },
+            {
+                name: "Css",
+                color: "orange-text-gradient",
+            },
+        ],
+        images: [
+            websites1, websites2, websites3, websites4
+        ],
+        source_code_link: "",
         report_link: "",
     },
 ];
