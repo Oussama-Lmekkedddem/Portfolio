@@ -1,5 +1,4 @@
 import {
-    FaInstagram,
     FaGithub,
     FaLinkedin,
     FaHome,
@@ -26,8 +25,6 @@ import {
     bootstrap,
     laravel,
     linux,
-    jobit,
-    tripguide,
     threejs,
     centrePlanck,
     riveraMetal,
@@ -36,6 +33,7 @@ import {
     c1, c2,
     django1, django2, django3,
     java1, java2, java3, java4, java5, java6, java7, java8, java9,
+    phpc1, phpc2, phpc3, phpc4, phpc5, phpc6, phpc7,
     phpm1, phpm2, phpm3, phpm4, phpm5, phpm6, phpm7, phpm8,
     qt1, qt2,
     springf1, springf2, springf3, springf4, springf5, springf6,
@@ -56,19 +54,19 @@ const projects = [
             },
             {
                 name: "Bootstrap",
-                color: "pink-text-gradient",
+                color: "violet-gradient",
             },
             {
                 name: "MySQL",
-                color: "blue-text-gradient",
-            },
-            {
-                name: "JavaScript,",
                 color: "green-text-gradient",
             },
             {
+                name: "JavaScript,",
+                color: "orange-text-gradient",
+            },
+            {
                 name: "Html",
-                color: "blue-text-gradient",
+                color: "orange-text-gradient",
             },
             {
                 name: "Css",
@@ -80,6 +78,34 @@ const projects = [
         ],
         source_code_link: "https://github.com/Oussama-Lmekkedddem/ENSAH-Service---Study-Management-Web-Application",
         report_link: "https://drive.google.com/file/d/1oi08J0GKSA1rgvvk3HJ3S0WE5EXBRwKj/view?usp=drive_link",
+    },
+    {
+        name: "Travel and Hotel Reservation Management System",
+        description:
+            "Development of a platform for booking travel and hotels, with an admin interface for complete management.",
+        tags: [
+            {
+                name: "Java",
+                color: "orange-text-gradient",
+            },
+            {
+                name: "JavaFx",
+                color: "green-text-gradient",
+            },
+            {
+                name: "MySQL",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "Scene Builder",
+                color: "pink-text-gradient",
+            },
+        ],
+        images: [
+            java1, java2, java3, java4, java5, java6, java7, java8, java9
+        ],
+        source_code_link: "https://github.com/Oussama-Lmekkedddem/Travel-and-Hotel-Reservation-Management-System.git",
+        report_link: "https://drive.google.com/file/d/1YRcFT_EDsIXOEa0iox1LV1ST6SeYVFqh/view?usp=sharing",
     },
     {
         name: "DragonBomber Game",
@@ -138,11 +164,11 @@ const projects = [
             },
             {
                 name: "bootstrap",
-                color: "pink-text-gradient",
+                color: "violet-gradient",
             },
             {
                 name: "js",
-                color: "pink-text-gradient",
+                color: "orange-text-gradient",
             },
             {
                 name: "ajax",
@@ -150,11 +176,11 @@ const projects = [
             },
             {
                 name: "html",
-                color: "pink-text-gradient",
+                color: "green-text-gradient",
             },
             {
                 name: "css",
-                color: "pink-text-gradient",
+                color: "blue-text-gradient",
             },
         ],
         images: [
@@ -180,15 +206,15 @@ const projects = [
             },
             {
                 name: "python",
-                color: "pink-text-gradient",
-            },
-            {
-                name: "bootstrap",
                 color: "blue-text-gradient",
             },
             {
+                name: "bootstrap",
+                color: "violet-gradient",
+            },
+            {
                 name: "typeScript",
-                color: "green-text-gradient",
+                color: "blue-text-gradient",
             },
             {
                 name: "html",
@@ -196,7 +222,7 @@ const projects = [
             },
             {
                 name: "css",
-                color: "pink-text-gradient",
+                color: "orange-text-gradient",
             },
         ],
         images: [
@@ -236,11 +262,11 @@ const projects = [
             },
             {
                 name: "bootstrap,",
-                color: "green-text-gradient",
+                color: "violet-gradient",
             },
             {
                 name: "oop",
-                color: "blue-text-gradient",
+                color: "orange-text-gradient",
             },
             {
                 name: "sql",
@@ -252,12 +278,11 @@ const projects = [
             },
             {
                 name: "inno Setup",
-                color: "green-text-gradient",
+                color: "pink-text-gradient",
             },
         ],
         images: [
-            tripguide,
-            jobit,
+            phpc1, phpc2, phpc3, phpc4, phpc5, phpc6, phpc7,
         ],
         source_code_link: "https://github.com/Oussama-Lmekkedddem/School_Administration_Project.git",
         report_link: "",
@@ -401,7 +426,7 @@ const socialLinks = [
 
 const sidebars = [
     {
-        title: "Hero",
+        title: "Home",
         icon: FaHome,
         link: "hero",
     },
@@ -462,9 +487,8 @@ const personnelInfos = {
             'Freelancer'
         ],
         description: 'I am a serious and motivated second-year student at an engineering school, specializing in computer engineering.',
-        resume: 'https://drive.google.com/file/d/1kQZNwD2HMeZDAqS5bN2dcm2SU0bV9aWy/view?usp=drive_link'
+        resume: 'https://drive.google.com/file/d/105FdXZ9U9ztuAklxWJJgoFGJVnIhi5h7/view?usp=sharing'
 };
-
 
 const educations = [
     {

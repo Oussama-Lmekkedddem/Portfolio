@@ -101,6 +101,8 @@ body {
           #804dee 0%,
           rgba(60, 51, 80, 0) 100%
   );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .green-pink-gradient {

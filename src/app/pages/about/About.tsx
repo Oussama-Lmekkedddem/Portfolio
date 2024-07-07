@@ -17,16 +17,14 @@ const Tex: React.FC<EducationProps> = ({education}) => {
                     className="absolute top-0 left-0 flex w-[50px] items-center justify-center rotate-[90deg] text-[8px] text-[#11998e]">
                     <strong>{education.year}</strong>
                 </div>
-                <div className="absolute -top-5 left-10 ">
+                <div className="absolute -top-5 left-10 text-white ">
                     <strong>{education.school}</strong>
                 </div>
             </div>
             <div>
-                <blockquote>
-                    <p className={`text-[15px]`}>
-                        {education.description}
-                    </p>
-                </blockquote>
+                <p className={`text-[15px] text-[#dfd9ff]`}>
+                    {education.description}
+                </p>
             </div>
         </section>
     );

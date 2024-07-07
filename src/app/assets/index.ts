@@ -61,6 +61,14 @@ import java7 from "./image/Java/java7.png";
 import java8 from "./image/Java/java8.png";
 import java9 from "./image/Java/java9.png";
 
+import phpc1 from "./image/Php-C/phpc1.jpg";
+import phpc2 from "./image/Php-C/phpc2.jpg";
+import phpc3 from "./image/Php-C/phpc3.jpg";
+import phpc4 from "./image/Php-C/phpc4.jpg";
+import phpc5 from "./image/Php-C/phpc5.jpg";
+import phpc6 from "./image/Php-C/phpc6.jpg";
+import phpc7 from "./image/Php-C/phpc7.jpg";
+
 import phpm1 from "./image/Php-M/phpm1.png";
 import phpm2 from "./image/Php-M/phpm2.png";
 import phpm3 from "./image/Php-M/phpm3.png";
@@ -118,6 +126,7 @@ export {
   c1, c2,
   django1, django2, django3,
   java1, java2, java3, java4, java5, java6, java7, java8, java9,
+  phpc1, phpc2, phpc3, phpc4, phpc5, phpc6, phpc7,
   phpm1, phpm2, phpm3, phpm4, phpm5, phpm6, phpm7, phpm8,
   qt1, qt2,
   springf1, springf2, springf3, springf4, springf5, springf6,
