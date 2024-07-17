@@ -40,73 +40,75 @@ const Contact: React.FC = () => {
     };
 
     return (
-        <section className={`w-full h-[1100px]`}>
+        <section className={`w-full h-[1100px] z-0`}>
             <StarsCanvas/>
-            <div className={`relative w-full max-w-7xl mx-auto sm:px-12 px-6 sm:py-12 py-16`}>
-                <Title title={contactTitle as Til}/>
-                <motion.div className={'absolute w-full h-full pl-80 pb-80 hidden md:block'}
-                            variants={slideIn("down", "tween", 0.2, 1)}>
-                    <SolarSystemCanvas/>
-                </motion.div>
-                <div className={`xl:flex xl:flex-row flex-col-reverse gap-10 overflow-hidden mt-4`}>
-                    <motion.div
-                        variants={slideIn("left", "tween", 0.2, 1)}
-                        className='flex-[0.75] bg-black-100 p-4 rounded-2xl bg-contact-mesg'
-                    >
-                        <form
-                            ref={form}
-                            onSubmit={sendEmail}
-                            className='mt-4 flex flex-col gap-5'
+            <div className={`w-full sm:px-12 px-6 sm:py-12 py-16`}>
+                <div className={`relative w-full h-full max-w-7xl mx-auto`}>
+                    <Title title={contactTitle as Til}/>
+                    <motion.div className={'absolute w-full h-full pl-80 pb-80 hidden md:block'}
+                                variants={slideIn("down", "tween", 0.2, 1)}>
+                        <SolarSystemCanvas/>
+                    </motion.div>
+                    <div className={`xl:flex xl:flex-row flex-col-reverse gap-10 overflow-hidden mt-4`}>
+                        <motion.div
+                            variants={slideIn("left", "tween", 0.2, 1)}
+                            className='flex-[0.75] bg-black-100 p-4 rounded-2xl bg-contact-mesg'
                         >
-                            <label className='flex flex-col'>
-                                <span className='text-white font-medium mb-4'>Your Name</span>
-                                <input
-                                    type='text'
-                                    name='name'
-                                    placeholder="What's your name?"
-                                    className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
-                                    required
-                                />
-                            </label>
-                            <label className='flex flex-col'>
-                                <span className='text-white font-medium mb-4'>Your email</span>
-                                <input
-                                    type='email'
-                                    name='email'
-                                    placeholder="What's your email address?"
-                                    className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
-                                    required
-                                />
-                            </label>
-                            <label className='flex flex-col'>
-                                <span className='text-white font-medium mb-4'>Your Message</span>
-                                <textarea
-                                    rows={7}
-                                    name='message'
-                                    placeholder='What you want to say?'
-                                    className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
-                                    required
-                                />
-                            </label>
-
-                            <button
-                                type='submit'
-                                className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
+                            <form
+                                ref={form}
+                                onSubmit={sendEmail}
+                                className='mt-4 flex flex-col gap-5'
                             >
-                                {loading ? "Sending..." : "Send"}
-                            </button>
-                        </form>
-                    </motion.div>
+                                <label className='flex flex-col'>
+                                    <span className='text-white font-medium mb-4'>Your Name</span>
+                                    <input
+                                        type='text'
+                                        name='name'
+                                        placeholder="What's your name?"
+                                        className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+                                        required
+                                    />
+                                </label>
+                                <label className='flex flex-col'>
+                                    <span className='text-white font-medium mb-4'>Your email</span>
+                                    <input
+                                        type='email'
+                                        name='email'
+                                        placeholder="What's your email address?"
+                                        className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+                                        required
+                                    />
+                                </label>
+                                <label className='flex flex-col'>
+                                    <span className='text-white font-medium mb-4'>Your Message</span>
+                                    <textarea
+                                        rows={7}
+                                        name='message'
+                                        placeholder='What you want to say?'
+                                        className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+                                        required
+                                    />
+                                </label>
 
-                    <motion.div
-                        variants={slideIn("right", "tween", 0.2, 1)}
-                        className='xl:flex-1 xl:h-auto md:h-[400px] h-[300px] flex flex-col p-2'
-                    >
-                        <div className="mb-auto">
-                            <SocialLink/>
-                        </div>
-                        <div className='flex-grow p-0'></div>
-                    </motion.div>
+                                <button
+                                    type='submit'
+                                    className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
+                                >
+                                    {loading ? "Sending..." : "Send"}
+                                </button>
+                            </form>
+                        </motion.div>
+
+                        <motion.div
+                            variants={slideIn("right", "tween", 0.2, 1)}
+                            className='xl:flex-1 xl:h-auto md:h-[400px] h-[300px] flex flex-col p-2'
+                        >
+                            <div className="mb-auto">
+                                <SocialLink/>
+                            </div>
+                            <div className='flex-grow p-0'></div>
+                        </motion.div>
+                    </div>
                 </div>
             </div>
         </section>

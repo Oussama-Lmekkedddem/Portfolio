@@ -30,7 +30,8 @@ const Project: React.FC = () => {
                 <Title title={projectTitle as Til}/>
                 <CarouselComponent groupedProjects={groupedProjects} handleCardClick={handleCardClick}/>
                 {selectedProject && (
-                    <ProjectDetailsCard project={selectedProject} closeHandler={handleCloseDetails}/>
+                    <ProjectDetailsCard project={selectedProject}
+                                        closeHandler={handleCloseDetails}/>
                 )}
             </div>
         </section>

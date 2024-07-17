@@ -68,7 +68,7 @@ const ProjectDetailsCard: React.FC<ProjectDetailsProps> = ({ project, closeHandl
 
     return (
         <>
-            <div className={style.projectDetail + " fixed inset-1 m-5 " +
+            <div className={"fixed inset-1 m-5 z-10 " +
                 "green-pink-gradient p-[1px] rounded-[20px] shadow-card"}>
                 <div className="flex flex-col bg-tertiary w-full h-full rounded-[20px]">
                     <div className="flex justify-between items-center p-3 text-gray-300">
