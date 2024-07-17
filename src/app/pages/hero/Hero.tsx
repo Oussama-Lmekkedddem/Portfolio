@@ -35,8 +35,8 @@ const Hero: React.FC = () => {
 
 
     return (
-        <section>
-            <div className={`relative w-full mx-auto`}>
+        <section className={`${style.bgTimekepper} w-full flex justify-center items-center sm:px-12 px-6 sm:py-12 py-16`}>
+            <div className={`relative w-full max-w-7xl mx-auto`}>
                 <div className="Home-content flex flex-wrap">
                     <div className="w-1/1.5">
                         <div className={`${style.gg} flex gap-3`}>

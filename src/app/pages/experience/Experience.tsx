@@ -21,21 +21,23 @@ const Experience: React.FC = () => {
 
     const experienceTitle = titles.find(title => title.mainTitle === 'Resume')
     return (
-        <section>
-            <Title title={experienceTitle as Til} />
-            <div className='mt-20 flex flex-col'>
-                <motion.div
-                    variants={fadeIn("up", "", 0.1, 1)}>
-                    <div className="h-[50%] w-[3px] bg-white absolute top-[25%] left-[50%] hidden lg:block"/>
-                    <VerticalTimeline>
-                        {experiences.map((experience, index) => (
-                            <ExperienceCard
-                                key={`experience-${index}`}
-                                experience={experience as Expert}
-                            />
-                        ))}
-                    </VerticalTimeline>
-                </motion.div>
+        <section className={`bgGrad1 w-full sm:px-12 px-6 sm:py-12 py-16`}>
+            <div className={`relative w-full max-w-7xl mx-auto`}>
+                <Title title={experienceTitle as Til} />
+                <div className='mt-20 flex flex-col'>
+                    <motion.div
+                        variants={fadeIn("up", "", 0.1, 1)}>
+                        <div className="h-[53%] w-[3px] bg-white absolute top-[22%] left-[50%] hidden lg:block"/>
+                        <VerticalTimeline>
+                            {experiences.map((experience, index) => (
+                                <ExperienceCard
+                                    key={`experience-${index}`}
+                                    experience={experience as Expert}
+                                />
+                            ))}
+                        </VerticalTimeline>
+                    </motion.div>
+                </div>
             </div>
         </section>
     );

@@ -39,7 +39,7 @@ const Stars: React.FC<StarsProps> = (props) => {
 
 const StarsCanvas: React.FC = () => {
     return (
-        <div className='w-full h-[175%] inset-0 bg-black'>
+        <div className='absolute w-full h-full inset-0 bg-black'>
             <Canvas camera={{ position: [0, 0, 1] }}>
                 <Suspense fallback={null}>
                     <Stars />

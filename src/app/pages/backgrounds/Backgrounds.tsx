@@ -11,8 +11,10 @@ const Backgrounds: React.FC = () => {
         <>
             <CustomCursor/>
             <PreLoader/>
+            <div className={`${style.bgBack} top-0 left-0 w-full h-full`}/>
+            {/**
             <div className={`absolute w-full h-screen`}>
-                <div className={`${style.bgBack} absolute top-0 left-0 w-full h-full`}/>
+                <div className={`${style.bgBack} top-0 left-0 w-full h-full`}/>
                 <div className={'absolute top-0 left-0 w-full h-full'}>
                     <div className={`${style.bgTimekepper} w-full h-full`}/>
                     <PatternBg/>
@@ -23,6 +25,7 @@ const Backgrounds: React.FC = () => {
                     <StarsCanvas/>
                 </div>
             </div>
+            */}
         </>
     );
 };

@@ -30,14 +30,14 @@ const DynamicSetupUpArrow = dynamic(() => import("@/app/pages/setupUpArrow/Setup
 export default function Home() {
     return (
         <main>
-            <DynamicHero idName="hero" />
-            <DynamicAbout idName="about" />
-            <div className="w-full h-[220px]" />
-            <DynamicExperience idName="experience" />
-            <div className="w-full h-[240px]" />
-            <DynamicProject idName="project" />
-            <DynamicContact idName="contact" />
-            <DynamicSetupUpArrow />
+            <DynamicHero idName="hero"/>
+            <DynamicAbout idName="about"/>
+            <div className="w-full h-[220px]"/>
+            <DynamicExperience idName="experience"/>
+            <div className="w-full h-[240px]"/>
+            <DynamicProject idName="project"/>
+            <DynamicContact idName="contact"/>
+            <DynamicSetupUpArrow/>
         </main>
     );
 }

@@ -47,7 +47,7 @@ const UpArrow: React.FC = () => {
                 <div
                     className='w-[35px] h-[35px] rounded-[8px] green-pink-gradient p-[1px] shadow-card'>
                     <div className='h-full rounded-[8px] bg-tertiary flex justify-center items-start'>
-                        <FaAngleUp className="text-2xl mt-[5px] blue-text-gradient"/>
+                        <FaAngleUp className="text-2xl mt-[5px] text-white"/>
                     </div>
 
                 </div>

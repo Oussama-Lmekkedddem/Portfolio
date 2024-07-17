@@ -102,13 +102,13 @@ const svgDataUrl = `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
 
 const PatternBg: React.FC = () => {
     return (
-        <div className="w-full"
+        <div className="w-full absolute"
             style={{
                 backgroundImage: `url("${svgDataUrl}")`,
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
-                height : '140%'
+                height : '100%'
             }}
         >
         </div>

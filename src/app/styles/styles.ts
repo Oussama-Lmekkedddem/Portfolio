@@ -1,11 +1,12 @@
 const styles = {
-    paddingX: "sm:px-12 px-4",
-    paddingY: "sm:py-12 py-4",
-    padding: "sm:px-12 px-6 sm:py-12 py-16",
+    // paddingX: "sm:px-12 px-4",
+    // paddingY: "sm:py-12 py-4",
+    // padding: "sm:px-12 px-6 sm:py-12 py-16",
+    //
+    //
 
     heroHeadTitle:
         "font-black text-white lg:text-[60px] sm:text-[40px] xs:text-[35px] text-[20px] lg:leading-[98px]",
-
 
     heroHeadText:
         "font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2",

@@ -1,5 +1,7 @@
 .verticalL {
     z-index: 30;
     color: white;
-
+}
+.bgGrad1 {
+    background: linear-gradient(to bottom, #1e2326, #050404);
 }

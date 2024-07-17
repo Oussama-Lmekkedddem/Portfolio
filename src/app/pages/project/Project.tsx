@@ -1,10 +1,11 @@
 'use client'
 
-import React, {useState} from "react";
-import {projects, titles} from "@/app/utils";
-import {CarouselComponent, ProjectDetailsCard, Title} from "@/app/components";
-import {Project as ProjectType, Title as Til} from "@/app/types";
-import SectionWrapper from "@/app/hooks/SectionWrapper";
+import React, {useState} from "react"
+import {projects, titles} from "@/app/utils"
+import {CarouselComponent, ProjectDetailsCard, Title} from "@/app/components"
+import {Project as ProjectType, Title as Til} from "@/app/types"
+import SectionWrapper from "@/app/hooks/SectionWrapper"
+import style from "@/app/pages/project/Project.module.css"
 
 const Project: React.FC = () => {
     const [selectedProject, setSelectedProject] = useState<ProjectType | null>(null);
@@ -24,8 +25,8 @@ const Project: React.FC = () => {
     }
 
     return (
-        <section>
-            <div className='mt-10 h-screen'>
+        <section className={`${style.bgGrad2} w-full h-[800px] sm:px-12 px-6 sm:py-12 py-16`}>
+            <div className={`relative w-full h-full max-w-7xl mx-auto`}>
                 <Title title={projectTitle as Til}/>
                 <CarouselComponent groupedProjects={groupedProjects} handleCardClick={handleCardClick}/>
                 {selectedProject && (
@@ -33,7 +34,7 @@ const Project: React.FC = () => {
                 )}
             </div>
         </section>
-    );
+);
 };
 
 export default SectionWrapper(Project, "portfolio");
