@@ -33,6 +33,7 @@ import {
     c1, c2,
     django1, django2, django3, django4,
     java1, java2, java3, java4, java5, java6, java7, java8, java9,
+    nettr1, nettr2, nettr3, nettr4, nettr5, nettr6,
     phpc1, phpc2, phpc3, phpc4, phpc5, phpc6, phpc7,
     phpm1, phpm2, phpm3, phpm4, phpm5, phpm6, phpm7, phpm8,
     qt1, qt2,
@@ -448,6 +449,44 @@ const projects = [
             websites1, websites2, websites3, websites4
         ],
         source_code_link: "",
+        report_link: "",
+    },
+    {
+        name: "Bus Reservation System",
+        description:
+            " Manage reservations, insert passenger details, process payments, " +
+            "verify tickets, and download tickets seamlessly. Includes an admin " +
+            "portal for efficient transport management.",
+        tags: [
+            {
+                name: "ASP.Net",
+                color: "violet-gradient",
+            },
+            {
+                name: "C#",
+                color: "orange-text-gradient",
+            },
+            {
+                name: "Bootstrap",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "Html",
+                color: "pink-text-gradient",
+            },
+            {
+                name: "Js",
+                color: "violet-gradient",
+            },
+            {
+                name: "Css",
+                color: "orange-text-gradient",
+            },
+        ],
+        images: [
+            nettr1, nettr2, nettr3, nettr4, nettr5, nettr6,
+        ],
+        source_code_link: "https://github.com/Oussama-Lmekkedddem/PRJ_NET.git",
         report_link: "",
     },
 ];

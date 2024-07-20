@@ -60,6 +60,13 @@ import java7 from "./image/Java/java7.png";
 import java8 from "./image/Java/java8.png";
 import java9 from "./image/Java/java9.png";
 
+import nettr1 from "./image/NetTr/nettr1.jpg";
+import nettr2 from "./image/NetTr/nettr2.jpg";
+import nettr3 from "./image/NetTr/nettr3.jpg";
+import nettr4 from "./image/NetTr/nettr4.jpg";
+import nettr5 from "./image/NetTr/nettr5.jpg";
+import nettr6 from "./image/NetTr/nettr6.jpg";
+
 import phpc1 from "./image/Php-C/phpc1.jpg";
 import phpc2 from "./image/Php-C/phpc2.jpg";
 import phpc3 from "./image/Php-C/phpc3.jpg";
@@ -137,6 +144,7 @@ export {
   c1, c2,
   django1, django2, django3, django4,
   java1, java2, java3, java4, java5, java6, java7, java8, java9,
+  nettr1, nettr2, nettr3, nettr4, nettr5, nettr6,
   phpc1, phpc2, phpc3, phpc4, phpc5, phpc6, phpc7,
   phpm1, phpm2, phpm3, phpm4, phpm5, phpm6, phpm7, phpm8,
   qt1, qt2,
