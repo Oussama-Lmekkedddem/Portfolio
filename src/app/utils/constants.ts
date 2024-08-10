@@ -689,7 +689,7 @@ const personnelInfos = {
             'Freelancer'
         ],
         description: 'I am a serious and motivated second-year student at an engineering school, specializing in computer engineering.',
-        resume: 'https://drive.google.com/file/d/105FdXZ9U9ztuAklxWJJgoFGJVnIhi5h7/view?usp=sharing'
+        resume: 'https://drive.google.com/file/d/1rR5DzKLyf3sbg9r_JrzBUofiRBJa09IN/view?usp=drive_link'
 };
 
 const educations = [
