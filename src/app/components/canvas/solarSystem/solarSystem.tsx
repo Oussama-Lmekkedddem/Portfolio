@@ -65,20 +65,21 @@
 
 'use client'
 
-import React, { Suspense, useEffect } from "react";
+import React, {Suspense, useEffect, useRef} from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF, useAnimations } from "@react-three/drei";
 import { CanvasLoader } from "@/app/components";
+import {Group} from "three";
 
 const SolarSystem = () => {
-    const { scene, animations } = useGLTF("./models/solarSystem/scene.gltf");
+
+    const {animations, scene} = useGLTF("./models/solarSystem/scene.gltf");
     const { actions } = useAnimations(animations, scene);
 
     useEffect(() => {
+        const action = actions[Object.keys(actions)[0]];
         if (actions) {
-            const action = actions[Object.keys(actions)[0]]; // Get the first animation action
-            action.reset().play(); // Reset to start and play the animation
-            action.loop = true; // Ensure the animation loops
+            action?.reset().play();
         }
     }, [actions]);
 

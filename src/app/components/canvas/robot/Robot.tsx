@@ -15,7 +15,6 @@ const Robot = () => {
         const action = actions["Experiment"];
         if (action) {
             action.play();
-            action.loop = true; // Set the animation to loop
         }
     }, [actions]);
 
@@ -48,7 +47,6 @@ const RobotCanvas = () => {
         >
             <Suspense fallback={<CanvasLoader />}>
                 <OrbitControls
-
                     enableZoom={false}
                     maxPolarAngle={Math.PI / 2}
                     minPolarAngle={Math.PI / 2}
