@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
             <div className={`w-full sm:px-12 px-6 sm:py-12 py-16`}>
                 <div className={`relative w-full h-full max-w-7xl mx-auto`}>
                     <Title title={contactTitle as Til}/>
-                    <motion.div className={'absolute w-full h-full pl-80 pb-80 hidden md:block'}
+                    <motion.div className={'absolute w-full h-full pl-80 hidden md:block'}
                                 variants={slideIn("down", "tween", 0.2, 1)}>
                         <SolarSystemCanvas/>
                     </motion.div>
