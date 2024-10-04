@@ -688,10 +688,9 @@ const personnelInfos = {
             'Designer',
             'Freelancer'
         ],
-        description: 'I am a serious and motivated second-year student at an engineering school, specializing in computer engineering.',
-        resume: 'https://drive.google.com/file/d/1rR5DzKLyf3sbg9r_JrzBUofiRBJa09IN/view?usp=sharing'
+        description: 'I am a serious and motivated  Software Engineering student at an engineering school, specializing in computer engineering.',
+        resume: 'https://drive.google.com/file/d/138HQL7nEoV20GDH_tPV9vNXZy3k60eUk/view?usp=sharing'
 };
-
 const educations = [
     {
         school: 'High school Malika el Fasi Boufekrane',
