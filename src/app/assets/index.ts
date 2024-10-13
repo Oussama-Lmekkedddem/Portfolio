@@ -28,7 +28,7 @@ import django from "./tech/django.png";
 import bootstrap from "./tech/bootstrap.png";
 import laravel from "./tech/laravel.png";
 import linux from "./tech/linux.png";
-
+import angular from "./tech/angular.png";
 
 import centrePlanck from "./company/centrePlanck.ico";
 import riveraMetal from "./company/riveraMetal.png";
@@ -135,7 +135,7 @@ export {
   redux,
   typescript,
 
-  docker, figma, git,mongodb, nodejs, reactjs,tailwind, threejs, spring, aspnet, django, bootstrap, laravel, linux,
+  docker, figma, git,mongodb, nodejs, reactjs,tailwind, threejs, spring, aspnet, django, bootstrap, laravel, linux, angular,
 
   backgroundsPattern, test,
 

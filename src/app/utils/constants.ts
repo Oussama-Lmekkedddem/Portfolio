@@ -25,6 +25,7 @@ import {
     bootstrap,
     laravel,
     linux,
+    angular,
     threejs,
     centrePlanck,
     riveraMetal,
@@ -530,6 +531,10 @@ const technologies = [
         icon: bootstrap,
     },
     {
+        name: "angular",
+        icon: angular,
+    },
+    {
         name: "figma",
         icon: figma,
     },
@@ -684,12 +689,12 @@ const titles = [
 const personnelInfos = {
         name: 'Lmekkeddem Oussama',
         job: [
+            'Software Engineering',
             'Developer',
-            'Designer',
             'Freelancer'
         ],
-        description: 'I am a serious and motivated  Software Engineering student at an engineering school, specializing in computer engineering.',
-        resume: 'https://drive.google.com/file/d/138HQL7nEoV20GDH_tPV9vNXZy3k60eUk/view?usp=sharing'
+        description: 'I am a serious and motivated final-year student at an engineering school, specializing in software engineering.',
+        resume: 'https://drive.google.com/file/d/1jqBN8H9VcfSPP8jL_ObGT8NseIeaA2Tv/view?usp=sharing'
 };
 const educations = [
     {
