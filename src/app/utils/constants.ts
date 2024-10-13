@@ -535,10 +535,6 @@ const technologies = [
         icon: angular,
     },
     {
-        name: "figma",
-        icon: figma,
-    },
-    {
         name: "git",
         icon: git,
     },
