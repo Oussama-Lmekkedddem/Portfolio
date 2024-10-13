@@ -25,7 +25,6 @@ import {
     bootstrap,
     laravel,
     linux,
-    angular,
     threejs,
     centrePlanck,
     riveraMetal,
@@ -529,10 +528,6 @@ const technologies = [
     {
         name: "bootstrap",
         icon: bootstrap,
-    },
-    {
-        name: "angular",
-        icon: angular,
     },
     {
         name: "git",
