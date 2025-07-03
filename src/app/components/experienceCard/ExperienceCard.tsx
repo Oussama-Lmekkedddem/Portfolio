@@ -28,9 +28,16 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
                 <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
                 <p
                     className='text-secondary text-[16px] font-semibold'
-                    style={{ margin: 0 }}
-                >
+                    style={{ margin: 0 }}>
                     {experience.company_name}
+                    <span>
+                        {experience.link && (
+                            <button
+                                onClick={() => window.open(experience.link, "_blank")}
+                                className="ml-4 text-blue-400 hover:text-blue-600 hover:underline text-[16px]">
+                                Link
+                            </button>
+                        )}</span>
                 </p>
             </div>
 

@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ProjectDetailsProps } from '@/app/types';
 import style from '@/app/components/projectDetailsCard/ProjectDetailsCard.module.css';
-import { github } from '@/app/assets';
-import { FaFilePdf } from 'react-icons/fa';
 import { ImageModal } from '@/app/components';
 import Image from "next/image";
 
@@ -39,6 +37,7 @@ const ProjectDetailsCard: React.FC<ProjectDetailsProps> = ({ project, closeHandl
     };
 
     useEffect(() => {
+        // document.body.style.overflow = 'hidden';
         const handleKeyDown = (event: KeyboardEvent) => {
             if (!isModalOpen) {
                 if (event.key === 'ArrowLeft') {
@@ -53,6 +52,7 @@ const ProjectDetailsCard: React.FC<ProjectDetailsProps> = ({ project, closeHandl
 
         return () => {
             document.removeEventListener('keydown', handleKeyDown);
+            // document.body.style.overflow = '';
         };
     }, [activeGroupIndex, isModalOpen, project]);
 
@@ -68,7 +68,7 @@ const ProjectDetailsCard: React.FC<ProjectDetailsProps> = ({ project, closeHandl
 
     return (
         <>
-            <div className={"fixed inset-1 m-5 z-10 " +
+            <div className={"fixed inset-1 m-5 z-[9999] " +
                 "green-pink-gradient p-[1px] rounded-[20px] shadow-card"}>
                 <div className="flex flex-col bg-tertiary w-full h-full rounded-[20px]">
                     <div className="flex justify-between items-center p-3 text-gray-300">
@@ -95,7 +95,7 @@ const ProjectDetailsCard: React.FC<ProjectDetailsProps> = ({ project, closeHandl
                                 <div
                                     className="grid gap-4 col-start-1 col-end-5 row-start-1 sm:mb-6 sm:grid-cols-4 lg:gap-6 lg:col-start-2 lg:row-end-6 lg:row-span-6 lg:mb-0">
                                     {groups[activeGroupIndex].map((image, index) => (
-                                        <div key={index} className={style.prjImg +' ' + styleImg[index % 3]}>
+                                        <div key={index} className={style.prjImg + ' ' + styleImg[index % 3]}>
                                             <div className="relative w-full h-full">
                                                 <Image
                                                     src={image.src}
@@ -136,33 +136,30 @@ const ProjectDetailsCard: React.FC<ProjectDetailsProps> = ({ project, closeHandl
                                 </dl>
                                 <div
                                     className="mt-4 flex flex-wrap col-start-1 row-start-3 self-center sm:mt-0 sm:col-start-2 sm:row-start-2 sm:row-span-2 lg:mt-6 lg:col-start-1 lg:row-start-3 lg:row-end-4 gap-4">
-                                    {project.source_code_link ? (
-                                        <button
-                                            type="button"
-                                            onClick={() =>    {if (typeof window !== 'undefined') {window.open(project.source_code_link, "_blank")}}}
-                                            className={style.prjBtn + " flex flex-auto text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg max-w-60"}>
-                                            <div className="w-10 h-10">
-                                                <img src={github.src} alt='source code' className='object-contain'/>
-                                            </div>
-                                            <div className={"h-10 flex-grow flex justify-center items-center"}>
-                                                GitHub
-                                            </div>
-                                        </button>
-                                    ) : null}
-                                    {project.report_link ? (
-                                        <button type="button"
-                                                onClick={() =>    {if (typeof window !== 'undefined') {window.open(project.report_link, "_blank")}}}
-                                                className={style.prjBtn + " flex flex-auto text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg max-w-60"}>
-                                            <div className="w-10 h-10 flex justify-center items-center p-1">
-                                                <FaFilePdf className='h-full w-full object-contain'/>
-                                            </div>
-                                            <div className={"h-10 flex-grow flex justify-center items-center"}>
-                                                Rapport
-                                            </div>
-                                        </button>
-                                    ) : null}
 
+                                    {project?.links?.map((linkItem, index) => {
+                                        const Icon = linkItem.icon;
+
+                                        return (
+                                            <button
+                                                key={index}
+                                                type="button"
+                                                onClick={() => {
+                                                    if (typeof window !== 'undefined') window.open(linkItem.url, "_blank");
+                                                }}
+                                                className={`${style.prjBtn} flex flex-auto text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg max-w-60`}
+                                            >
+                                                <div className="w-10 h-10 flex justify-center items-center p-1">
+                                                    <Icon className="h-full w-full object-contain"/>
+                                                </div>
+                                                <div className="h-10 flex-grow flex justify-center items-center">
+                                                    {linkItem.label}
+                                                </div>
+                                            </button>
+                                        );
+                                    })}
                                 </div>
+
                                 <p className="mt-4 text-sm text-[#dfd9ff] leading-6 col-start-1 sm:col-span-2 lg:mt-6 lg:row-start-4 lg:col-span-1">
                                     {project.description}
                                 </p>

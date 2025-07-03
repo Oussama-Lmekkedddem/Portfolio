@@ -1,10 +1,11 @@
 import { Html, useProgress } from "@react-three/drei";
 import styles from '@/app/components/loader/Loader.module.css';
 import React, {useEffect, useState} from "react";
-import { personnelInfos } from "@/app/utils";
+import {useLanguage} from "@/app/context/LanguageContext";
 
 
 const PreLoader: React.FC = () => {
+    const { personnelInfos } = useLanguage().constants;
 
     const [isVisible, setIsVisible] = useState(true);
 

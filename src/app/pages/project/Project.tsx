@@ -1,13 +1,14 @@
 'use client'
 
 import React, {useState} from "react"
-import {projects, titles} from "@/app/utils"
 import {CarouselComponent, ProjectDetailsCard, Title} from "@/app/components"
 import {Project as ProjectType, Title as Til} from "@/app/types"
 import SectionWrapper from "@/app/hooks/SectionWrapper"
 import style from "@/app/pages/project/Project.module.css"
+import {useLanguage} from "@/app/context/LanguageContext";
 
 const Project: React.FC = () => {
+    const { projects, titles } = useLanguage().constants;
     const [selectedProject, setSelectedProject] = useState<ProjectType | null>(null);
     const projectTitle = titles.find(title => title.mainTitle === 'Portfolio')
     const groupedProjects: ProjectType[][] = [];

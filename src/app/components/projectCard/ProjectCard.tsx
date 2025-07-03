@@ -7,6 +7,7 @@ import { fadeIn } from "@/app/utils";
 import { github } from "@/app/assets";
 import { ProjectCardProps } from "@/app/types";
 import Image from 'next/image';
+import {FaGithub} from "react-icons/fa";
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, index}) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -52,12 +53,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index}) => {
                                 </motion.div>
                             ))}
                         </div>
-                        {project.source_code_link ? (
+                        {project?.links?.some(link => link.icon === FaGithub) ? (
                             <div className='absolute inset-0 flex justify-end m-3 card-img_hover z-30'>
                                 <div
                                     onClick={() => {
                                         if (typeof window !== 'undefined') {
-                                            window.open(project.source_code_link, "_blank");
+                                            const githubLink = project.links.find(link => link.label === "GitHub");
+                                            if (githubLink?.url) {
+                                                window.open(githubLink.url, "_blank");
+                                            }
                                         }
                                     }}
                                     className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"

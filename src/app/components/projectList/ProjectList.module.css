@@ -1,0 +1,23 @@
+.scrollbarHide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbarHide {
+    scrollbar-width: none;
+}
+
+.prjBtn {
+    border: 1px solid var(--hover-sidebar-color);
+    background: var(--background-social-link-color);
+    color: var(--blue-text-gradient-color, #ddd);
+    transition: background 0.3s ease;
+}
+.prjBtn:hover {
+    background: var(--hover-social-link-color);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.activeBtn {
+    background: var(--hover-sidebar-color);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+}
