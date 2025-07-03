@@ -173,16 +173,8 @@ const technologies = [
         icon: angular,
     },
     {
-        name: "gitlab",
-        icon: gitlab,
-    },
-    {
         name: "kubernetes",
         icon: kubernetes,
-    },
-    {
-        name: "git",
-        icon: git,
     },
     {
         name: "docker",
