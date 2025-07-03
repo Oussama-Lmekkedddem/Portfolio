@@ -4,8 +4,8 @@ import React from 'react';
 
 import {SocialLinkCardProps} from "@/app/types";
 import "@/app/components/socialLink/SocialLink.css";
-import {socialLinks} from "@/app/utils";
 import { IconType } from 'react-icons';
+import {useLanguage} from "@/app/context/LanguageContext";
 
 
 
@@ -29,6 +29,7 @@ const SocialLinkCard: React.FC<SocialLinkCardProps> = ({ href, icon: Icon, name,
 };
 
 const SocialLink: React.FC = () => {
+    const { socialLinks } = useLanguage().constants;
     return (
         <div className="h-auto w-full flex items-center justify-center">
             <div className="st-social-group flex items-center justify-center p-3">

@@ -18,6 +18,10 @@ const DynamicProject = dynamic(() => import("@/app/pages/project/Project"), {
     ssr: false,
     loading: Loading,
 });
+const DynamicProjectV2 = dynamic(() => import("@/app/pages/projectV2/ProjectV2"), {
+    ssr: false,
+    loading: Loading,
+});
 const DynamicContact = dynamic(() => import("@/app/pages/contact/Contact"), {
     ssr: false,
     loading: Loading,
@@ -35,7 +39,8 @@ export default function Home() {
             <div className="w-full h-[220px]"/>
             <DynamicExperience idName="experience"/>
             <div className="w-full h-[240px]"/>
-            <DynamicProject idName="project"/>
+            <DynamicProjectV2 idName="project" />
+            {/*<DynamicProject idName="project"/>*/}
             <DynamicContact idName="contact"/>
             <DynamicSetupUpArrow/>
         </main>

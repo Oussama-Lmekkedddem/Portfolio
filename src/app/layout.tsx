@@ -3,6 +3,9 @@ import { Inter } from "next/font/google";
 import "./styles/globals.css";
 import {Backgrounds, SideBar, NavBar} from "@/app/pages";
 import Head from "next/head";
+import { LanguageProvider } from "@/app/context/LanguageContext";
+
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,10 +21,12 @@ export default function RootLayout({
   return (
       <html lang="en">
       <body className={inter.className}>
+      <LanguageProvider>
       <Backgrounds/>
       <NavBar/>
       <SideBar/>
       {children}
+      </LanguageProvider>
       </body>
       </html>
   );

@@ -7,10 +7,12 @@ import {RobotCanvas} from "@/app/components/canvas";
 import style from "@/app/pages/hero/Hero.module.css";
 import Typed from 'typed.js';
 import { styles }from "@/app/styles";
-import {fadeIn, personnelInfos} from "@/app/utils";
 import { motion } from "framer-motion";
+import { fadeIn } from "@/app/utils";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 const Hero: React.FC = () => {
+    const { personnelInfos } = useLanguage().constants;
 
     React.useEffect(() => {
         const typedElement = document.querySelector('.typed');
@@ -31,14 +33,14 @@ const Hero: React.FC = () => {
                 typed.destroy();
             };
         }
-    }, []);
+    }, [personnelInfos]);
 
 
     return (
         <section className={`${style.bgTimekepper} w-full flex justify-center items-center sm:px-12 px-6 sm:py-12 py-16`}>
             <div className={`relative w-full max-w-7xl mx-auto`}>
-                <div className="Home-content flex flex-wrap">
-                    <div className="w-1/1.5">
+                <div className="Home-content flex flex-row">
+                    <div className="w-1/1.5 ">
                         <div className={`${style.gg} flex gap-3`}>
                             <motion.div className={`${style.thirdColor} w-1/3`}
                                         variants={fadeIn("left", "spring", 0.25, 0.75)}/>
@@ -88,7 +90,7 @@ const Hero: React.FC = () => {
                                     variants={fadeIn("left", "spring", 1, 0.75)}>
                             <h1 className={styles.heroHeadTitle + ' w-1/2'}>{personnelInfos.name}</h1>
                             {/* eslint-disable-next-line react/no-unescaped-entities */}
-                            <p className={styles.heroSubText}>I'm <span className={`typed`}
+                            <p className={styles.heroSubText}>{personnelInfos.me} <span className={`typed`}
                                                                         data-typed-items={personnelInfos.job.join(', ')}></span>
                             </p>
                         </motion.div>
@@ -128,7 +130,7 @@ const Hero: React.FC = () => {
                                         variants={fadeIn("left", "spring", 11 * 0.25, 0.75)}/>
                         </div>
                     </div>
-                    <div className="lg:flex-grow lg:-ml-40 hidden md:block ">
+                    <div className="flex-grow lg:-ml-40 hidden md:block">
                         <motion.div className="w-full h-full flex justify-center items-center"
                                     variants={fadeIn("left", "spring", 3, 0.75)}>
                             <RobotCanvas/>
