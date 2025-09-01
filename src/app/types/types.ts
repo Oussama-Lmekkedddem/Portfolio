@@ -1,5 +1,6 @@
 import { StaticImageData } from "next/image";
 import { IconType } from "react-icons";
+import React from "react";
 
 
 /**
@@ -11,13 +12,19 @@ interface Tag {
     color: string;
 }
 
+export interface ProjectLink {
+    url: string;
+    label: string;
+    icon: React.ElementType;
+}
+
+
 interface Project {
     name: string;
     description: string;
     tags: Tag[];
     images: StaticImageData[];
-    source_code_link: string;
-    report_link: string;
+    links: ProjectLink[];
 }
 
 interface ProjectDetailsProps {
@@ -27,6 +34,20 @@ interface ProjectDetailsProps {
 interface ProjectCardProps {
     project: Project;
     index: number;
+}
+
+interface ShowProjectProps {
+    project: Project;
+}
+
+interface ProjectListProps {
+    projects: Project[];
+    allTags: string[];
+    activeFilters: string[];
+    setFilterTags: React.Dispatch<React.SetStateAction<string[]>>;
+    onSelect: (project: Project) => void;
+    onHover: (project: Project) => void;
+    onHoverOut: () => void;
 }
 
 
@@ -48,6 +69,7 @@ interface Experience {
     company_name: string;
     title: string;
     points: string[];
+    link: string;
 }
 
 interface ExperienceCardProps {
@@ -160,16 +182,55 @@ interface Education {
     school: string;
     year: string;
     description: string;
+    link: string;
 }
 interface EducationProps {
     education: Education;
 }
 
 
+/**
+ * Contact
+ */
+
+/**
+ * alert -> Thank you. I will get back to you as soon as possible.
+ * alert -> Something went wrong.
+ * alert -> Form reference is not set.
+ * Your Name
+ * What's your name?
+ * Your email
+ * What's your email address?
+ * Your Message
+ * What you want to say?
+ * Sending...
+ * Send
+ */
+
+interface ContactForm {
+    successMessage: string;
+    errorMessage: string;
+    formReferenceError: string;
+
+    nameLabel: string;
+    namePlaceholder: string;
+
+    emailLabel: string;
+    emailPlaceholder: string;
+
+    messageLabel: string;
+    messagePlaceholder: string;
+
+    sendingStatus: string;
+    sendButton: string;
+}
+
 export type {
     Project,
     ProjectDetailsProps,
     ProjectCardProps,
+    ShowProjectProps,
+    ProjectListProps,
     ExperienceCardProps,
     SideBarCardProps,
     BallProps,

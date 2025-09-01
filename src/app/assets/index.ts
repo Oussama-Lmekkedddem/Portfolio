@@ -28,11 +28,21 @@ import django from "./tech/django.png";
 import bootstrap from "./tech/bootstrap.png";
 import laravel from "./tech/laravel.png";
 import linux from "./tech/linux.png";
-// import angular from "./tech/angular.png";
+import apis from "./tech/apis.png";
+import database from "./tech/database.png";
+import gitlab from "./tech/gitlab.png";
+import kafka from "./tech/kafka.png";
+import kubernetes from "./tech/kubernetes.png";
+import scrum from "./tech/scrum.png";
+import odoo from "./tech/odoo.png";
+import reactNative from "./tech/react-native.png";
+import angular from "./tech/angular.png";
+import azure from "./tech/azure.webp";
 
 import centrePlanck from "./company/centrePlanck.ico";
 import riveraMetal from "./company/riveraMetal.png";
 import freelancer from "./company/freelancer.png"
+import nttdata from "./company/nttdata.png";
 
 
 import backgroundsPattern from "./image/backgroundPattern.svg";
@@ -48,7 +58,6 @@ import django1 from "./image/Django/django1.png";
 import django2 from "./image/Django/django2.png";
 import django3 from "./image/Django/django3.png";
 import django4 from "./image/Django/django4.png";
-
 
 import java1 from "./image/Java/java1.png";
 import java2 from "./image/Java/java2.png";
@@ -116,8 +125,32 @@ import wordpressc1 from "./image/WordPress-C/wordpressc1.png";
 import wordpressc2 from "./image/WordPress-C/wordpressc2.png";
 import wordpressc3 from "./image/WordPress-C/wordpressc3.png";
 
+import couldOpenStack1 from "./image/cloud-OpenStack/couldOpenStack1.jpg";
+import couldOpenStack2 from "./image/cloud-OpenStack/couldOpenStack2.png";
+import couldOpenStack3 from "./image/cloud-OpenStack/couldOpenStack3.png";
+import couldOpenStack4 from "./image/cloud-OpenStack/couldOpenStack4.jpg";
+import couldOpenStack5 from "./image/cloud-OpenStack/couldOpenStack5.jpg";
 
+import mbBank1 from "./image/mb-bank/mbBank1.png";
+import mbBank2 from "./image/mb-bank/mbBank2.png";
+import mbBank3 from "./image/mb-bank/mbBank3.png";
+import mbBank4 from "./image/mb-bank/mbBank4.png";
 
+import myPortfolio1 from "./image/my-Portfolio/myPortfolio1.png";
+import myPortfolio2 from "./image/my-Portfolio/myPortfolio2.png";
+import myPortfolio3 from "./image/my-Portfolio/myPortfolio3.png";
+
+import odooPharmacy1 from "./image/odoo-Pharmacy/odooPharmacy1.png";
+import odooPharmacy2 from "./image/odoo-Pharmacy/odooPharmacy2.png";
+import odooPharmacy3 from "./image/odoo-Pharmacy/odooPharmacy3.png";
+import odooPharmacy4 from "./image/odoo-Pharmacy/odooPharmacy4.png";
+import odooPharmacy5 from "./image/odoo-Pharmacy/odooPharmacy5.png";
+
+import trainingApp1 from "./image/trainig-app/trainingApp1.jpg";
+import trainingApp2 from "./image/trainig-app/trainingApp2.jpg";
+import trainingApp3 from "./image/trainig-app/trainingApp3.jpg";
+import trainingApp4 from "./image/trainig-app/trainingApp4.jpg";
+import trainingApp5 from "./image/trainig-app/trainingApp5.jpg";
 
 export {
   logo,
@@ -136,10 +169,11 @@ export {
   typescript,
 
   docker, figma, git,mongodb, nodejs, reactjs,tailwind, threejs, spring, aspnet, django, bootstrap, laravel, linux,
+  apis, database, gitlab, kafka, kubernetes, scrum, odoo, reactNative, angular, azure,
 
   backgroundsPattern, test,
 
-  centrePlanck, riveraMetal, freelancer,
+  centrePlanck, riveraMetal, freelancer, nttdata,
 
   c1, c2,
   django1, django2, django3, django4,
@@ -153,4 +187,10 @@ export {
   websitep1, websitep2, websitep3,
   websites1, websites2, websites3,websites4,
   wordpressc1, wordpressc2, wordpressc3,
+  couldOpenStack1, couldOpenStack2, couldOpenStack3, couldOpenStack4, couldOpenStack5,
+  mbBank1, mbBank2, mbBank3, mbBank4,
+  myPortfolio1, myPortfolio2, myPortfolio3,
+  odooPharmacy1, odooPharmacy2, odooPharmacy3, odooPharmacy4, odooPharmacy5,
+  trainingApp1, trainingApp2, trainingApp3, trainingApp4, trainingApp5
+
 };

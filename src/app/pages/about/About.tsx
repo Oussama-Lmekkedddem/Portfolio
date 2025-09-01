@@ -3,35 +3,45 @@
 import React from "react";
 import { Tech, Title  } from "@/app/components";
 import { SectionWrapper } from "@/app/hooks";
-import {titles, personnelInfos, educations, fadeIn} from "@/app/utils";
 import { styles } from "@/app/styles";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { EducationProps, Title as Til } from "@/app/types";
 import { motion } from "framer-motion";
 import PatternBg from "@/app/pages/backgrounds/patternBg/PatternBg";
+import { fadeIn } from "@/app/utils";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 const Tex: React.FC<EducationProps> = ({education}) => {
     return (
         <section className="w-full mt-10">
             <div className="flex -ml-5 mb-14 relative">
-                <div
-                    className="absolute top-0 left-0 flex w-[50px] items-center justify-center rotate-[90deg] text-[8px] text-[#11998e]">
+                <div className="absolute top-0 left-0 flex w-[50px] items-center justify-center rotate-[90deg] text-[8px] text-[#11998e]">
                     <strong>{education.year}</strong>
                 </div>
-                <div className="absolute -top-5 left-10 text-white ">
+                <div className="absolute -top-5 left-10 text-white">
                     <strong>{education.school}</strong>
                 </div>
+                {education.link && (
+                    <button
+                        onClick={() => window.open(education.link, "_blank")}
+                        className="ml-5 -mt-14 text-blue-400 hover:text-blue-600 hover:underline text-[12px]">
+                        Link
+                    </button>
+                )}
             </div>
             <div>
-                <p className={`text-[15px] text-[#dfd9ff]`}>
+                <p className="text-[15px] text-[#dfd9ff]">
                     {education.description}
                 </p>
             </div>
         </section>
     );
+
 }
 
 const About: React.FC = () => {
+    const { titles, personnelInfos, educations } = useLanguage().constants;
+
     const aboutTitle = titles.find(title => title.mainTitle === 'About Me');
     const [currentEducationIndex, setCurrentEducationIndex] = React.useState(0);
 

@@ -5,30 +5,21 @@ import {
     FaUser,
     FaFileAlt,
     FaBriefcase,
-    FaEnvelope
+    FaEnvelope,
+    FaFilePdf
 } from 'react-icons/fa';
-
 import {
     mobile,
     backend,
     creator,
     web,
-    reactjs,
-    tailwind,
-    mongodb,
-    git,
-    figma,
-    docker,
-    spring,
-    aspnet,
-    django,
-    bootstrap,
-    laravel,
-    linux,
-    threejs,
-    centrePlanck,
-    riveraMetal,
-    freelancer,
+
+    reactjs, tailwind, mongodb, git, figma, docker,
+    spring, aspnet, laravel, django, bootstrap,
+    linux, threejs,
+    centrePlanck, riveraMetal, freelancer,
+    apis, database, gitlab, kafka, kubernetes,
+    scrum, odoo, reactNative, angular, azure,
 
     c1, c2,
     django1, django2, django3, django4,
@@ -43,7 +34,7 @@ import {
     websites1, websites2, websites3, websites4,
     wordpressc1, wordpressc2, wordpressc3,
 } from "../assets";
-
+import {FiExternalLink} from "react-icons/fi";
 
 const projects = [
     {
@@ -65,7 +56,7 @@ const projects = [
                 color: "green-text-gradient",
             },
             {
-                name: "JavaScript,",
+                name: "JavaScript",
                 color: "orange-text-gradient",
             },
             {
@@ -80,8 +71,18 @@ const projects = [
         images: [
             phpm1, phpm2, phpm3, phpm4, phpm5, phpm6, phpm7, phpm8
         ],
-        source_code_link: "https://github.com/Oussama-Lmekkedddem/ENSAH-Service---Study-Management-Web-Application",
-        report_link: "https://drive.google.com/file/d/1oi08J0GKSA1rgvvk3HJ3S0WE5EXBRwKj/view?usp=drive_link",
+        links: [
+            {
+                url: "https://github.com/Oussama-Lmekkedddem/ENSAH-Service---Study-Management-Web-Application",
+                label: "GitHub",
+                icon: FaGithub
+            },
+            {
+                url: "https://drive.google.com/file/d/1oi08J0GKSA1rgvvk3HJ3S0WE5EXBRwKj/view?usp=drive_link",
+                label: "Report",
+                icon: FaFilePdf
+            }
+        ]
     },
     {
         name: "Travel & Hotel Reservation Manag",
@@ -108,8 +109,23 @@ const projects = [
         images: [
             java1, java2, java3, java4, java5, java6, java7, java8, java9
         ],
-        source_code_link: "https://github.com/Oussama-Lmekkedddem/Travel-and-Hotel-Reservation-Management-System.git",
-        report_link: "https://drive.google.com/file/d/1YRcFT_EDsIXOEa0iox1LV1ST6SeYVFqh/view?usp=sharing",
+        links: [
+            {
+                url: "https://github.com/Oussama-Lmekkedddem/Travel-and-Hotel-Reservation-Management-System.git",
+                label: "GitHub",
+                icon: FaGithub
+            },
+            {
+                url: "https://drive.google.com/file/d/1YRcFT_EDsIXOEa0iox1LV1ST6SeYVFqh/view?usp=sharing",
+                label: "Report",
+                icon: FaFilePdf
+            },
+            {
+                url: "#",
+                label: "Website",
+                icon: FiExternalLink
+            }
+        ]
     },
     {
         name: "DragonBomber Game",
@@ -126,20 +142,25 @@ const projects = [
                 color: "green-text-gradient",
             },
             {
-                name: "CLion",
+                name: "Clion",
                 color: "pink-text-gradient",
             },
         ],
         images: [
             qt1, qt2,
         ],
-        source_code_link: "https://github.com/Oussama-Lmekkedddem/Dragon-Bomber.git",
-        report_link: "",
+        links: [
+            {
+                url: "https://github.com/Oussama-Lmekkedddem/Dragon-Bomber.git",
+                label: "GitHub",
+                icon: FaGithub
+            }
+        ]
     },
     {
-        name: "(PFE) Management & Defense Planning",
+        name: "Management & Defense Planning",
         description:
-            "Creating final year projects (PFE) and planning defenses, " +
+            "Creating final year projects and planning defenses, " +
             "managing students and professors, and scheduling defense timetables.",
         tags: [
             {
@@ -147,15 +168,20 @@ const projects = [
                 color: "blue-text-gradient",
             },
             {
-                name: "CLion",
+                name: "Clion",
                 color: "pink-text-gradient",
             },
         ],
         images: [
             c1, c2
         ],
-        source_code_link: "https://github.com/Oussama-Lmekkedddem/Gestion-des-stages-de-PFE-et-planification-des-soutenances.git",
-        report_link: "",
+        links: [
+            {
+                url: "https://github.com/Oussama-Lmekkedddem/Gestion-des-stages-de-PFE-et-planification-des-soutenances.git",
+                label: "GitHub",
+                icon: FaGithub
+            }
+        ]
     },
     {
         name: "Financial Management",
@@ -164,55 +190,55 @@ const projects = [
             "managing financial accounts, transactions, balances, and client relationships.",
         tags: [
             {
-                name: "spring Boot",
+                name: "Spring Boot",
                 color: "blue-text-gradient",
             },
             {
-                name: "spring Data JPA",
+                name: "Spring Data JPA",
                 color: "green-text-gradient",
             },
             {
-                name: "thymeleaf",
+                name: "Thymeleaf",
                 color: "pink-text-gradient",
             },
             {
-                name: "spring Security",
+                name: "Spring Security",
                 color: "blue-text-gradient",
             },
             {
-                name: "sql",
+                name: "MySQL",
                 color: "green-text-gradient",
             },
             {
-                name: "java",
+                name: "Java",
                 color: "pink-text-gradient",
             },
             {
-                name: "bootstrap",
+                name: "Bootstrap",
                 color: "violet-gradient",
             },
             {
-                name: "js",
+                name: "JavaScript",
                 color: "orange-text-gradient",
             },
             {
-                name: "ajax",
+                name: "Ajax",
                 color: "pink-text-gradient",
             },
             {
-                name: "html",
+                name: "Html",
                 color: "green-text-gradient",
             },
             {
-                name: "css",
+                name: "Css",
                 color: "blue-text-gradient",
             },
         ],
         images: [
             springf1, springf2, springf3, springf4, springf5, springf6,
         ],
-        source_code_link: "",
-        report_link: "",
+        links: [
+        ]
     },
     {
         name: "Python Project",
@@ -222,39 +248,39 @@ const projects = [
             "videos, and Position Detection, and more.",
         tags: [
             {
-                name: "react",
+                name: "React",
                 color: "blue-text-gradient",
             },
             {
-                name: "django",
+                name: "Django",
                 color: "green-text-gradient",
             },
             {
-                name: "python",
+                name: "Python",
                 color: "blue-text-gradient",
             },
             {
-                name: "bootstrap",
+                name: "Bootstrap",
                 color: "violet-gradient",
             },
             {
-                name: "typeScript",
+                name: "TypeScript",
                 color: "blue-text-gradient",
             },
             {
-                name: "html",
+                name: "Html",
                 color: "pink-text-gradient",
             },
             {
-                name: "css",
+                name: "Css",
                 color: "orange-text-gradient",
             },
         ],
         images: [
             django1, django2, django3, django4,
         ],
-        source_code_link: "",
-        report_link: "",
+        links: [
+        ]
     },
     {
         name: "WordPress WebSite",
@@ -262,19 +288,24 @@ const projects = [
             "Development of a WordPress website",
         tags: [
             {
-                name: "wordPress",
+                name: "WordPress",
                 color: "blue-text-gradient",
             },
             {
-                name: "seo",
+                name: "SEO",
                 color: "green-text-gradient",
             },
         ],
         images: [
             wordpressc1, wordpressc2, wordpressc3
         ],
-        source_code_link: "https://centreplanck.com/",
-        report_link: "",
+        links: [
+            {
+                url: "https://centreplanck.com/",
+                label: "Website",
+                icon: FiExternalLink
+            }
+        ]
     },
     {
         name: "Center administration",
@@ -283,35 +314,40 @@ const projects = [
             "module, payment, classroom, and timetable management.",
         tags: [
             {
-                name: "php",
+                name: "Php",
                 color: "blue-text-gradient",
             },
             {
-                name: "bootstrap,",
+                name: "Bootstrap",
                 color: "violet-gradient",
             },
             {
-                name: "oop",
+                name: "OOP",
                 color: "orange-text-gradient",
             },
             {
-                name: "sql",
+                name: "MySQL",
                 color: "green-text-gradient",
             },
             {
-                name: "phpDesktop",
+                name: "PhpDesktop",
                 color: "blue-text-gradient",
             },
             {
-                name: "inno Setup",
+                name: "Inno Setup",
                 color: "pink-text-gradient",
             },
         ],
         images: [
             phpc1, phpc2, phpc3, phpc4, phpc5, phpc6, phpc7,
         ],
-        source_code_link: "https://github.com/Oussama-Lmekkedddem/School_Administration_Project.git",
-        report_link: "",
+        links: [
+            {
+                url: "https://github.com/Oussama-Lmekkedddem/School_Administration_Project.git",
+                label: "GitHub",
+                icon: FaGithub
+            }
+        ]
     },
     {
         name: "Exam planning",
@@ -320,55 +356,55 @@ const projects = [
             "module management, including groups, absences, exam timetables, and reports.",
         tags: [
             {
-                name: "spring Boot",
+                name: "Spring Boot",
                 color: "blue-text-gradient",
             },
             {
-                name: "spring Data JPA",
+                name: "Spring Data JPA",
                 color: "green-text-gradient",
             },
             {
-                name: "thymeleaf",
+                name: "Thymeleaf",
                 color: "pink-text-gradient",
             },
             {
-                name: "spring Security",
+                name: "Spring Security",
                 color: "blue-text-gradient",
             },
             {
-                name: "sql",
+                name: "MySQL",
                 color: "green-text-gradient",
             },
             {
-                name: "java",
+                name: "Java",
                 color: "pink-text-gradient",
             },
             {
-                name: "bootstrap",
+                name: "Bootstrap",
                 color: "violet-gradient",
             },
             {
-                name: "js",
+                name: "JavaScript",
                 color: "orange-text-gradient",
             },
             {
-                name: "html",
+                name: "Html",
                 color: "green-text-gradient",
             },
             {
-                name: "css",
+                name: "Css",
                 color: "blue-text-gradient",
             },
             {
-                name: "hibernate",
+                name: "Hibernate",
                 color: "pink-text-gradient",
             },
         ],
         images: [
             springj1, springj2, springj3, springj4, springj5, springj6, springj7, springj8,
         ],
-        source_code_link: "",
-        report_link: "",
+        links: [
+        ]
     },
     {
         name: "Image-Based E-Commerce Search",
@@ -405,7 +441,7 @@ const projects = [
                 color: "pink-text-gradient",
             },
             {
-                name: "Js",
+                name: "JavaScript",
                 color: "violet-gradient",
             },
             {
@@ -416,8 +452,8 @@ const projects = [
         images: [
             websitep1, websitep2, websitep3,
         ],
-        source_code_link: "",
-        report_link: "",
+        links: [
+        ]
     },
     {
         name: "E-Shop Website",
@@ -429,7 +465,7 @@ const projects = [
                 color: "blue-text-gradient",
             },
             {
-                name: "jQuery",
+                name: "JQuery",
                 color: "green-text-gradient",
             },
             {
@@ -437,7 +473,7 @@ const projects = [
                 color: "pink-text-gradient",
             },
             {
-                name: "Js",
+                name: "JavaScript",
                 color: "violet-gradient",
             },
             {
@@ -448,8 +484,8 @@ const projects = [
         images: [
             websites1, websites2, websites3, websites4
         ],
-        source_code_link: "",
-        report_link: "",
+        links: [
+        ]
     },
     {
         name: "Bus Reservation System",
@@ -475,7 +511,7 @@ const projects = [
                 color: "pink-text-gradient",
             },
             {
-                name: "Js",
+                name: "JavaScript",
                 color: "violet-gradient",
             },
             {
@@ -486,8 +522,13 @@ const projects = [
         images: [
             nettr1, nettr2, nettr3, nettr4, nettr5, nettr6,
         ],
-        source_code_link: "https://github.com/Oussama-Lmekkedddem/PRJ_NET.git",
-        report_link: "",
+        links: [
+            {
+                url: "https://github.com/Oussama-Lmekkedddem/PRJ_NET.git",
+                label: "GitHub",
+                icon: FaGithub
+            }
+        ]
     },
 ];
 
@@ -514,20 +555,40 @@ const services = [
 
 const technologies = [
     {
+        name: "spring boot",
+        icon: spring,
+    },
+    {
+        name: "ASP.Net",
+        icon: aspnet,
+    },
+    {
+        name: "laravel",
+        icon: laravel,
+    },
+    {
+        name: "apis",
+        icon: apis,
+    },
+    {
         name: "React JS",
         icon: reactjs,
     },
     {
-        name: "Tailwind CSS",
-        icon: tailwind,
+        name: "react native",
+        icon: reactNative,
     },
     {
-        name: "Three JS",
-        icon: threejs,
+        name: "angular",
+        icon: angular,
     },
     {
-        name: "bootstrap",
-        icon: bootstrap,
+        name: "gitlab",
+        icon: gitlab,
+    },
+    {
+        name: "kubernetes",
+        icon: kubernetes,
     },
     {
         name: "git",
@@ -538,29 +599,22 @@ const technologies = [
         icon: docker,
     },
     {
+        name: "azure",
+        icon: azure,
+    },
+    {
         name: "linux",
         icon: linux,
     },
     {
-        name: "spring boot",
-        icon: spring,
+        name: "database",
+        icon: database,
     },
     {
-        name: "ASP.Net",
-        icon: aspnet,
+        name: "odoo",
+        icon: odoo,
     },
-    {
-        name: "django",
-        icon: django,
-    },
-    {
-        name: "laravel",
-        icon: laravel,
-    },
-    {
-        name: "MongoDB",
-        icon: mongodb,
-    },
+
 ];
 
 const experiences = [
@@ -649,6 +703,7 @@ const sidebars = [
         link: "contact",
     },
 ];
+
 const titles = [
     {
         mainTitle: 'About Me',
@@ -678,36 +733,46 @@ const titles = [
 ];
 
 const personnelInfos = {
-        name: 'Lmekkeddem Oussama',
+        name: 'LMEKKEDDEM Oussama',
         job: [
             'Software Engineering',
             'Developer',
             'Freelancer'
         ],
-        description: 'I am a serious and motivated final-year student at an engineering school, specializing in software engineering.',
+        description: 'Motivated Software Engineer (State-Certified), open to professional opportunities.',
         resume: 'https://drive.google.com/file/d/1jqBN8H9VcfSPP8jL_ObGT8NseIeaA2Tv/view?usp=sharing'
 };
 const educations = [
     {
         school: 'High school Malika el Fasi Boufekrane',
         year: '2018-2019',
-        description: 'Studied Mathematics, Physics, Chemistry, and basic Sciences, ..'
+        description: 'Studied Mathematics, Physics, Chemistry, and basic Sciences, ..',
+        link: "#"
     },
     {
-        school: 'National School of Applied Sciences of Al hoceima',
-        year: '2020-2022',
-        description: 'Studied Algebra, Analysis, Mechanical, and Electronics, ..'
-    },
-    {
-        school: 'National School of Applied Sciences of Al hoceima',
-        year: '2022-2025',
+        school: 'ENSAH: National School of Applied Sciences of Al Hoceima',
+        year: '2023-2024',
         description: 'Studying programming languages, frameworks, networks, security, and project management, ..',
+        link: "#"
     },
     {
-        school: 'Certificate: Machine Learning with Python, IBM',
-        year: '2023-2023',
-        description: 'Technology: Python, Machine Learning, Scikit-Learn, Pandas, OpenCV, ..'
+        school: 'ENSIIE: National School of Computer Science for Industry and Business',
+        year: '2020-2025',
+        description: 'Two years of remote learning at ENSIIE, focused on core IT technologies. Didn\'t complete the program.',
+        link: ""
     },
+    {
+        school: 'IBM: Certificate in Machine Learning with Python',
+        year: '2023-2023',
+        description: 'Applied Scikit-learn to build and evaluate ML models; covered data preparation, SVM, ..',
+        link: "#"
+    },
+    {
+        school: 'ORACLE: Certificate in Java SE 8 Programmer',
+        year: '2024-2024',
+        description: 'Demonstrating proficiency in object-oriented programming and core Java principles, ..',
+        link: "#"
+    }
 ];
 
 

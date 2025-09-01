@@ -16,21 +16,24 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔧 Environment & EmailJS Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This project uses **Next.js** and **EmailJS**. You need a local env file and an EmailJS template.
 
-## Learn More
+### 1) Create `.env.local`
+> Do **not** commit this file. Next.js already git-ignores it by default.
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Recipient (public at runtime)
+NEXT_PUBLIC_CONTACT_TO_EMAIL=you@newdomain.com
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# (Optional but recommended to avoid hardcoding)
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=service_xxx
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=template_xxx
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=public_xxx
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+to contact me: lmekkeddemoussama@gmail.com
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+good luck

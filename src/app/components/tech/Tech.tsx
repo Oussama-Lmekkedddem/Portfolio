@@ -2,13 +2,14 @@
 
 import React from "react";
 import { BallCanvas } from "@/app/components/canvas";
-import { technologies } from "@/app/utils";
 import {styles} from "@/app/styles";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/app/utils";
 import { StaticImageData } from "next/image";
+import {useLanguage} from "@/app/context/LanguageContext";
 
 const Tech = () => {
+    const { technologies } = useLanguage().constants;
   return (
       <motion.div className="mb-20"
                   variants={fadeIn("up", "spring", 3 * 0.5, 0.75)}>

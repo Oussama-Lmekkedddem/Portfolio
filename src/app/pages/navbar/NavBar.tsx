@@ -5,10 +5,11 @@ import {
     Collapse,
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import {sidebars} from "@/app/utils";
 import style from "@/app/pages/navbar/NavBar.module.css"
+import {useLanguage} from "@/app/context/LanguageContext";
 
 const NavList: React.FC = () => {
+    const { sidebars } = useLanguage().constants;
     return (
         <ul className={"my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6"}>
             {sidebars.map((sidebar, index) => (

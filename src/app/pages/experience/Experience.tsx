@@ -3,12 +3,14 @@
 import React, { useEffect } from "react";
 import {VerticalTimeline} from "react-vertical-timeline-component";
 import { motion } from "framer-motion";
-import {experiences, fadeIn, titles} from "@/app/utils";
+import {fadeIn} from "@/app/utils";
 import {ExperienceCard, Title} from "@/app/components";
 import {SectionWrapper} from "@/app/hooks";
 import {Experience as Expert, Title as Til} from "@/app/types";
 import "@/app/pages/experience/Experience.css"
+import {useLanguage} from "@/app/context/LanguageContext";
 const Experience: React.FC = () => {
+    const { titles, experiences } = useLanguage().constants;
     useEffect(() => {
         const removeHiddenClass = () => {
             const hiddenElements = document.querySelectorAll('.is-hidden');
@@ -27,7 +29,7 @@ const Experience: React.FC = () => {
                 <div className='mt-20 flex flex-col'>
                     <motion.div
                         variants={fadeIn("up", "", 0.1, 1)}>
-                        <div className="h-[53%] w-[3px] bg-white absolute top-[22%] left-[50%] hidden lg:block"/>
+                        <div className="h-[68%] w-[3px] bg-white absolute top-[16%] left-[50%] hidden lg:block"/>
                         <VerticalTimeline>
                             {experiences.map((experience, index) => (
                                 <ExperienceCard

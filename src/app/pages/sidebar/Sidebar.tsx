@@ -1,22 +1,25 @@
-"use client"
+"use client";
 
 import "@/app/pages/sidebar/Sidebar.css";
 import React, { useState, useEffect } from 'react';
-import { sidebars } from "@/app/utils";
 import { SideBarCard } from "@/app/components";
+import { useLanguage } from "@/app/context/LanguageContext";
+import {LanguageEnum} from "@/app/utils";
 
 export default function Sidebar() {
+    const { switchLanguage, constants } = useLanguage();
+    const { sidebars } = constants;
+    const [activeSection, setActiveSection] = useState<string>(sidebars[0]?.link || '');
     const [isHeaderVisible, setIsHeaderVisible] = useState(false);
-    const [activeSection, setActiveSection] = useState<string>(sidebars[0].link);
+
+    // Re-calculate activeSection when sidebars change
+    useEffect(() => {
+        setActiveSection(sidebars[0]?.link || '');
+    }, [sidebars]);
 
     useEffect(() => {
         const handleMouseMove = (event: MouseEvent) => {
-            const mouseX = event.clientX;
-            if (mouseX >= 0 && mouseX <= 100) {
-                setIsHeaderVisible(true);
-            } else {
-                setIsHeaderVisible(false);
-            }
+            setIsHeaderVisible(event.clientX >= 0 && event.clientX <= 100);
         };
 
         const handleScroll = () => {
@@ -25,34 +28,38 @@ export default function Sidebar() {
             sections.forEach((section) => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
-                if (typeof window !== 'undefined' && window.scrollY >= sectionTop - sectionHeight / 3) {
+                if (window.scrollY >= sectionTop - sectionHeight / 3) {
                     currentSection = section.getAttribute('id');
                 }
             });
-            setActiveSection(currentSection || sidebars[0].link);
+            setActiveSection(currentSection || sidebars[0]?.link || '');
         };
 
         document.addEventListener('mousemove', handleMouseMove);
-        if (typeof window !== 'undefined') {
-            window.addEventListener('scroll', handleScroll);
-        }
+        window.addEventListener('scroll', handleScroll);
 
         return () => {
             document.removeEventListener('mousemove', handleMouseMove);
-            if (typeof window !== 'undefined') {
-                window.removeEventListener('scroll', handleScroll);
-            }
+            window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
-
+    }, [sidebars]);
+    const availableLanguages = Object.values(LanguageEnum);
 
     return (
         <div id="header-parent" className={isHeaderVisible ? 'header-visible' : 'header-hidden'}>
             {isHeaderVisible && (
-                <header
-                    id="header"
-                    className="flex flex-col justify-center h-screen"
-                >
+                <header id="header" className="flex flex-col justify-center h-screen">
+                    <div className="mb-4 flex justify-center gap-4">
+                        {availableLanguages.map((lang) => (
+                            <button
+                                key={lang}
+                                onClick={() => switchLanguage(lang)}
+                            >
+                                {lang.toUpperCase()}
+                            </button>
+                        ))}
+                    </div>
+
                     <nav id="navbar" className="navbar nav-menu">
                         <ul className="flex flex-col space-y-0">
                             {sidebars.map((sidebar, index) => (
