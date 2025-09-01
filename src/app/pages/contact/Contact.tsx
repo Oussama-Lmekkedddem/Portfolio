@@ -19,13 +19,18 @@ const Contact: React.FC = () => {
     const [loading, setLoading] = useState(false);
     const contactTitle = titles.find(title => title.mainTitle === 'Contact')
 
+    const TO_EMAIL = process.env.NEXT_PUBLIC_CONTACT_TO_EMAIL || '';
+    const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '';
+    const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '';
+    const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '';
+
     const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setLoading(true);
 
         if (form.current) {
             emailjs
-                .sendForm('service_9kp0pgm', 'template_ycvvp2m', form.current, 'caEbYirUniRIvDdgD')
+                .sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form.current, EMAILJS_PUBLIC_KEY)
                 .then(
                     () => {
                         setLoading(false);
@@ -92,6 +97,8 @@ const Contact: React.FC = () => {
                                         required
                                     />
                                 </label>
+
+                                <input type="hidden" name="to_email" value={TO_EMAIL}/>
 
                                 <button
                                     type='submit'
