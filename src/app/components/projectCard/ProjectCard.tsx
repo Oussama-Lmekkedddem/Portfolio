@@ -27,7 +27,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index}) => {
     }, [project.images]);
 
     return (
-        <Tilt className="Project-Card" tiltMaxAngleX={5} tiltMaxAngleY={5} scale={1.2} transitionSpeed={200}>
+        <Tilt className="Project-Card" tiltMaxAngleX={5} tiltMaxAngleY={5} scale={1.1} transitionSpeed={200}>
             <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} className='green-pink-gradient p-[1px] rounded-[20px] shadow-card'>
                 <div className='bg-tertiary p-5 rounded-[20px] sm:w-[360px] w-full'>
                     <div className='relative w-full h-[230px]'>

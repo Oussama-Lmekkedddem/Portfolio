@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 
-const Loading = () => <p>Loading...</p>;
+const Loading = () => <p></p>;
 
 const DynamicHero = dynamic(() => import("@/app/pages/hero/Hero"), {
     ssr: false,
@@ -36,11 +36,15 @@ export default function Home() {
         <main>
             <DynamicHero idName="hero"/>
             <DynamicAbout idName="about"/>
-            <div className="w-full h-[220px]"/>
+            <div className="w-full h-[350px] md:h-[220px]"/>
             <DynamicExperience idName="experience"/>
             <div className="w-full h-[240px]"/>
-            <DynamicProjectV2 idName="project" />
-            {/*<DynamicProject idName="project"/>*/}
+            <div className="block sm:hidden">
+                <DynamicProject idName="project"/>
+            </div>
+            <div className="hidden sm:block">
+                <DynamicProjectV2 idName="project"/>
+            </div>
             <DynamicContact idName="contact"/>
             <DynamicSetupUpArrow/>
         </main>

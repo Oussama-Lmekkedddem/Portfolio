@@ -79,36 +79,18 @@ const personnelInfos = {
         'Freelance'
     ],
     description: 'Ingénieur Logiciel motivé (certifié par l’État), ouvert aux opportunités professionnelles.',
-    resume: 'https://drive.google.com/file/d/1-PjqT-JPCq_XyQjoRpFQ9F1zKXO5EWLU/view?usp=sharing'
+    resume: 'https://drive.google.com/file/d/1-PjqT-JPCq_XyQjoRpFQ9F1zKXO5EWLU/view?usp=sharing',
+    welcome: 'Bienvenue'
 };
 
 const titles = [
-    {
-        mainTitle: 'À Propos de Moi',
-        subTitle: 'Qui suis-je',
-        description: 'Découvrez mon parcours et mes centres d’intérêt.'
-    },
-    {
-        mainTitle: 'Services',
-        subTitle: 'Ce que je fais',
-        description: 'Découvrez les services que je propose et mes domaines d’expertise.'
-    },
-    {
-        mainTitle: 'Portfolio',
-        subTitle: 'Mes Projets',
-        description: 'Explorez mes projets réalisés et voyez mon travail.'
-    },
-    {
-        mainTitle: 'Résumé',
-        subTitle: 'Mon Parcours',
-        description: 'Consultez mon expérience professionnelle et mes compétences.'
-    },
-    {
-        mainTitle: 'Contact',
-        subTitle: 'Me Contacter',
-        description: 'Prenez contact avec moi pour toute demande ou collaboration.'
-    }
+    { id: 'about',     mainTitle: 'Qui suis-je ?', subTitle: 'Qui suis-je',        description: 'Découvrez mon parcours et mes centres d’intérêt.' },
+    { id: 'services',  mainTitle: 'Services',        subTitle: 'Ce que je fais',      description: 'Découvrez les services que je propose et mes domaines d’expertise.' },
+    { id: 'portfolio', mainTitle: 'Portfolio',       subTitle: 'Mes Projets',         description: 'Explorez mes projets réalisés et voyez mon travail.' },
+    { id: 'resume',    mainTitle: 'Résumé',          subTitle: 'Mon Parcours',        description: 'Consultez mon expérience professionnelle et mes compétences.' },
+    { id: 'contact',   mainTitle: 'Contact',         subTitle: 'Me Contacter',        description: 'Prenez contact avec moi pour toute demande ou collaboration.' },
 ];
+
 
 const educations = [
     {
@@ -149,24 +131,8 @@ const technologies = [
         icon: spring,
     },
     {
-        name: "ASP.Net",
-        icon: aspnet,
-    },
-    {
-        name: "laravel",
-        icon: laravel,
-    },
-    {
-        name: "apis",
-        icon: apis,
-    },
-    {
         name: "React JS",
         icon: reactjs,
-    },
-    {
-        name: "react native",
-        icon: reactNative,
     },
     {
         name: "angular",
@@ -189,13 +155,29 @@ const technologies = [
         icon: linux,
     },
     {
+        name: "react native",
+        icon: reactNative,
+    },
+    {
         name: "database",
         icon: database,
     },
     {
+        name: "ASP.Net",
+        icon: aspnet,
+    },
+    {
+        name: "laravel",
+        icon: laravel,
+    },
+    {
+        name: "apis",
+        icon: apis,
+    },
+    {
         name: "odoo",
         icon: odoo,
-    },
+    }
 ];
 
 const experiences = [

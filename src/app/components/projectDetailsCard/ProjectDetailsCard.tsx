@@ -3,6 +3,7 @@ import { ProjectDetailsProps } from '@/app/types';
 import style from '@/app/components/projectDetailsCard/ProjectDetailsCard.module.css';
 import { ImageModal } from '@/app/components';
 import Image from "next/image";
+import {useIsMobile} from "@/app/hooks";
 
 const ProjectDetailsCard: React.FC<ProjectDetailsProps> = ({ project, closeHandler }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -23,9 +24,11 @@ const ProjectDetailsCard: React.FC<ProjectDetailsProps> = ({ project, closeHandl
         return result;
     };
 
+    const isMobileSize = useIsMobile();
 
+    const groupSize = isMobileSize ? 1 : 3;
 
-    const groups = groupImages(project.images, 3);
+    const groups = groupImages(project.images, groupSize);
 
     const openModal = (index: number) => {
         setCurrentImageIndex(index);
@@ -66,11 +69,60 @@ const ProjectDetailsCard: React.FC<ProjectDetailsProps> = ({ project, closeHandl
         setActiveGroupIndex(newIndex);
     };
 
+
+    // useEffect(() => {
+    //
+    //     document.body.style.overflow = "hidden";
+    //     return () => {
+    //         // restore on unmount
+    //         document.body.style.overflow = "";
+    //     };
+    // }, []);
+
+
+    // --- mobile swipe (drag) between image groups ---
+    const SWIPE_THRESHOLD = 50; // px
+    const startXY = React.useRef<{ x: number; y: number } | null>(null);
+    const dragging = React.useRef(false);
+
+    const isMobile = () =>
+        typeof window !== "undefined" ? window.innerWidth < 640 : true;
+
+    const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+        if (!isMobile()) return;
+        dragging.current = true;
+        (e.currentTarget as HTMLElement).setPointerCapture?.(e.pointerId);
+        startXY.current = { x: e.clientX, y: e.clientY };
+    };
+
+    const onPointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+        if (!isMobile() || !dragging.current || !startXY.current) return;
+        const dx = e.clientX - startXY.current.x;
+        const dy = e.clientY - startXY.current.y;
+        dragging.current = false;
+        startXY.current = null;
+
+        // ignore mostly-vertical swipes (let the page scroll)
+        if (Math.abs(dx) < Math.abs(dy)) return;
+
+        if (dx <= -SWIPE_THRESHOLD) {
+            // swipe left → next group
+            handleNextProject();
+        } else if (dx >= SWIPE_THRESHOLD) {
+            // swipe right → prev group
+            handlePrevProject();
+        }
+    };
+
+    const onPointerCancel = onPointerUp;
+    const onPointerMove = () => {}; // no-op (decide on release only)
+
+
     return (
         <>
-            <div className={"fixed inset-1 m-5 z-[9999] " +
+            <div className={"fixed inset-1 mx-2 md:mx-5 mb-5 mt-20 md:my-5 z-[9999] " +
                 "green-pink-gradient p-[1px] rounded-[20px] shadow-card"}>
-                <div className="flex flex-col bg-tertiary w-full h-full rounded-[20px]">
+                <div className="flex flex-col bg-tertiary w-full h-full rounded-[20px] overflow-y-auto">
                     <div className="flex justify-between items-center p-3 text-gray-300">
                         <h5 className="text-lg text-gray-300 font-medium"></h5>
                         <button
@@ -86,14 +138,21 @@ const ProjectDetailsCard: React.FC<ProjectDetailsProps> = ({ project, closeHandl
                         <div className="py-3 px-2 sm:p-6 md:py-10 md:px-8">
                             <div className="max-w-4xl mx-auto grid grid-cols-1 lg:max-w-5xl lg:gap-x-20 lg:grid-cols-2">
                                 <div
-                                    className="relative p-3 col-start-1 row-start-1 flex flex-col-reverse rounded-lg bg-gradient-to-t from-black/75 via-black/0 sm:bg-none sm:row-start-2 sm:p-0 lg:row-start-1">
-                                    <h1 className="mt-1 text-lg font-semibold text-[#dfd9ff] sm:text-[#dfd9ff] md:text-2xl ">
-                                        {project.name}
-                                    </h1>
-
+                                    className="relative p-3 col-start-1 row-start-1 flex flex-col-reverse rounded-lg bg-gradient-to-t
+                                    from-black/75 via-black/0 sm:bg-none sm:row-start-2 sm:p-0 lg:row-start-1">
+                                    <h1 className="mt-4 md:mt-1 text-lg font-semibold text-[#dfd9ff] sm:text-[#dfd9ff] md:text-2xl ">
+                                        {project.name} </h1>
                                 </div>
+
                                 <div
-                                    className="grid gap-4 col-start-1 col-end-5 row-start-1 sm:mb-6 sm:grid-cols-4 lg:gap-6 lg:col-start-2 lg:row-end-6 lg:row-span-6 lg:mb-0">
+                                    className="grid gap-4 col-start-1 col-end-5 row-start-1 sm:mb-6 sm:grid-cols-4
+                                    lg:gap-6 lg:col-start-2 lg:row-end-6 lg:row-span-6 lg:mb-0 overflow-x-hidden"
+                                    onPointerDown={onPointerDown}
+                                    onPointerMove={onPointerMove}
+                                    onPointerUp={onPointerUp}
+                                    onPointerCancel={onPointerCancel}
+                                    style={{touchAction: "pan-y"}} // allow vertical scroll; we handle horizontal
+                                >
                                     {groups[activeGroupIndex].map((image, index) => (
                                         <div key={index} className={style.prjImg + ' ' + styleImg[index % 3]}>
                                             <div className="relative w-full h-full">

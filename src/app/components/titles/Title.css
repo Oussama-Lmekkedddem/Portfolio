@@ -28,14 +28,18 @@
 }
 
 @media (max-width: 800px) {
+    /*main title*/
     .heading_background {
-        font-size: 40px;
+        font-size: 50px;
         top: -36%;
     }
+    /*sub title*/
     .text_background{
-        font-size: 25px;
+        font-size: 30px;
     }
+    /*description*/
     .section-title p {
-        font-size: 10px;
+        font-size: 13px;
+        margin-top: -20px;
     }
 }

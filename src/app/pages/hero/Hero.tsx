@@ -38,9 +38,9 @@ const Hero: React.FC = () => {
 
     return (
         <section className={`${style.bgTimekepper} w-full flex justify-center items-center sm:px-12 px-6 sm:py-12 py-16`}>
-            <div className={`relative w-full max-w-7xl mx-auto`}>
+            <div className={`relative w-full max-w-7xl mx-auto pt-8 md:pt-0`}>
                 <div className="Home-content flex flex-row">
-                    <div className="w-1/1.5 ">
+                    <div className="w-full md:w-[66%]">
                         <div className={`${style.gg} flex gap-3`}>
                             <motion.div className={`${style.thirdColor} w-1/3`}
                                         variants={fadeIn("left", "spring", 0.25, 0.75)}/>
@@ -86,14 +86,36 @@ const Hero: React.FC = () => {
                             <motion.div className={`${style.firstColor} w-1/3`}
                                         variants={fadeIn("left", "spring", 8 * 0.25, 0.75)}/>
                         </div>
-                        <motion.div className={"pl-10 mb-2"}
-                                    variants={fadeIn("left", "spring", 1, 0.75)}>
-                            <h1 className={styles.heroHeadTitle + ' w-1/2'}>{personnelInfos.name}</h1>
-                            {/* eslint-disable-next-line react/no-unescaped-entities */}
-                            <p className={styles.heroSubText}>{personnelInfos.me} <span className={`typed`}
-                                                                        data-typed-items={personnelInfos.job.join(', ')}></span>
+                        <motion.div
+                            className="pl-0 sm:pl-10 mb-2 w-full h-40 sm:w-1/2 sm:h-auto flex flex-col justify-center sm:block"
+                            variants={fadeIn("left", "spring", 1, 0.75)}
+                        >
+                            <h1 className={`${styles.heroHeadTitle} text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold`}>
+                                {personnelInfos.name}
+                            </h1>
+
+                            <p
+                                className={`${styles.heroSubText} text-2xl sm:text-base md:text-lg whitespace-nowrap w-full`}
+                            >
+                                {personnelInfos.me}{' '}
+                                <span
+                                    className="typed inline-block align-baseline"
+                                    data-typed-items={personnelInfos.job.join(', ')}
+                                ></span>
                             </p>
+
+
                         </motion.div>
+
+
+                        {/*<motion.div className={"pl-10 mb-2"}*/}
+                        {/*            variants={fadeIn("left", "spring", 1, 0.75)}>*/}
+                        {/*    <h1 className={styles.heroHeadTitle + ' w-1/2'}>{personnelInfos.name}</h1>*/}
+                        {/*    /!* eslint-disable-next-line react/no-unescaped-entities *!/*/}
+                        {/*    <p className={styles.heroSubText}>{personnelInfos.me} <span className={`typed`}*/}
+                        {/*                                                                data-typed-items={personnelInfos.job.join(', ')}></span>*/}
+                        {/*    </p>*/}
+                        {/*</motion.div>*/}
                         <div className={`${style.gg} flex gap-3 mt-4`}>
                             <motion.div className={`${style.firstColor} w-1/3`}
                                         variants={fadeIn("left", "spring", 5 * 0.25, 0.75)}/>

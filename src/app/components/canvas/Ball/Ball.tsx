@@ -46,8 +46,13 @@ const BallCanvas: React.FC<BallCanvasProps> = ({ icon }) => {
       <Canvas
           frameloop='demand'
           dpr={[1, 2]}
-          gl={{ preserveDrawingBuffer: true }}
+          gl={{
+              antialias: false,
+              preserveDrawingBuffer: false
+          }}
+
       >
+
         <Suspense fallback={<CanvasLoader />}>
           <OrbitControls enableZoom={false} />
           <Ball imgUrl={icon} />

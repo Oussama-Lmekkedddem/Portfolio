@@ -55,3 +55,23 @@
 }
 
 
+@media (max-width: 640px) {
+    .navButton {
+        font-size: 2rem; /* smaller icons */
+    }
+
+    .navButton:nth-of-type(1) {
+        margin-right: 10px; /* less right margin */
+    }
+
+    .navButton:nth-of-type(2) {
+        margin-left: 10px;  /* less left margin */
+    }
+
+    .modalContent {
+        padding: 20px; /* reduce side padding */
+        max-width: 95%;
+    }
+}
+
+

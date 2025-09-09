@@ -164,6 +164,7 @@ export interface SocialLinkCardProps {
  */
 
 interface Title {
+    id: string;
     mainTitle: string;
     subTitle: string;
     description: string;
