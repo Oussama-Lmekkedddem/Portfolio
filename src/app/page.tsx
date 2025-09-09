@@ -36,7 +36,7 @@ export default function Home() {
         <main>
             <DynamicHero idName="hero"/>
             <DynamicAbout idName="about"/>
-            <div className="w-full h-[350px] md:h-[220px]"/>
+            <div className="w-full h-[300px] md:h-[220px]"/>
             <DynamicExperience idName="experience"/>
             <div className="w-full h-[240px]"/>
             <div className="block sm:hidden">
