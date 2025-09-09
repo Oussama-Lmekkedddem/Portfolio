@@ -41,8 +41,7 @@ const Tex: React.FC<EducationProps> = ({education}) => {
 
 const About: React.FC = () => {
     const { titles, personnelInfos, educations } = useLanguage().constants;
-
-    const aboutTitle = titles.find(title => title.mainTitle === 'About Me');
+    const aboutTitle = titles.find(title => title.id === 'about');
     const [currentEducationIndex, setCurrentEducationIndex] = React.useState(0);
 
 
@@ -69,7 +68,7 @@ const About: React.FC = () => {
                                 variants={fadeIn("up", "spring", 2 * 0.5, 0.75)}>
                         <div className="flex-1 h-full">
                             <figure className="bg-transparent rounded-xl p-8 dark:bg-transparent">
-                                <div className="pt-3 space-y-4">
+                                <div className="pt-1 md:pt-3 space-y-4">
                                     <blockquote>
                                         <p className={`${styles.heroSubText} text-lg`}>
                                             {personnelInfos.description}
@@ -83,7 +82,7 @@ const About: React.FC = () => {
                                                         window.open(personnelInfos.resume, "_blank")
                                                     }
                                                 }}
-                                                className={"mt-10 md:w-1/3 sm:w-full py-4 rounded-[5px] border " +
+                                                className={"mt-4 px-10 md:mt-10 md:w-1/3 sm:w-full py-4 rounded-[5px] border " +
                                                     "text-white border-[var(--font-sub-title-color)] " +
                                                     "flex items-center justify-center shadow-card uppercase " +
                                                     "hover:bg-[var(--hover-sidebar-color)] hover:text-[#161616]"}>
@@ -95,7 +94,7 @@ const About: React.FC = () => {
                             </figure>
                         </div>
                         <div
-                            className="border-r-2 border-b-2 border-[#3F3F3F] rounded-[20px] pt-12 flex-1 h-full min-h-80 flex flex-col sm:flex-row sm:flex-wrap w-full gap-2">
+                            className="border-r-2 border-b-2 border-[#3F3F3F] rounded-[20px] pt-6 md:pt-12 flex-1 h-full min-h-60 md:min-h-80 flex flex-col sm:flex-row sm:flex-wrap w-full gap-2">
                             <div className="flex-1 h-full">
                                 <div className="w-full flex justify-center items-center">
                                     <div
@@ -104,7 +103,7 @@ const About: React.FC = () => {
                                 </div>
                                 <div className="w-full flex mb-4">
                                     <div
-                                        className={`text-[#11998e] uppercase lg:text-[15px] sm:text-[12px]  xs:text-[10px] text-[8px] lg:leading-[20px]`}>
+                                        className={`text-[#11998e] uppercase text-[12px] lg:text-[15px] xs:text-[10px] lg:leading-[20px]`}>
                                         studied at
                                     </div>
                                 </div>

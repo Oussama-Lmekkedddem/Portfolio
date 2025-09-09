@@ -17,8 +17,7 @@ const Contact: React.FC = () => {
 
     const form = useRef<HTMLFormElement>(null);
     const [loading, setLoading] = useState(false);
-    const contactTitle = titles.find(title => title.mainTitle === 'Contact')
-
+    const contactTitle = titles.find(title => title.id === 'contact')
     const TO_EMAIL = process.env.NEXT_PUBLIC_CONTACT_TO_EMAIL || '';
     const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '';
     const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '';

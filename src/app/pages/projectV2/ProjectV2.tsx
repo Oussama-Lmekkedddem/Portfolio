@@ -11,8 +11,7 @@ import {useLanguage} from "@/app/context/LanguageContext";
 
 const ProjectV2: React.FC = () => {
     const { projects, titles } = useLanguage().constants;
-
-    const projectTitle = titles.find(title => title.mainTitle === 'Portfolio');
+    const projectTitle = titles.find(title => title.id === 'portfolio');
     const [selectedProject, setSelectedProject] = useState<ProjectType | null>(projects[0] || null);
     const [hoverProject, setHoverProject] = useState<ProjectType | null>(null);
     const [filterTags, setFilterTags] = useState<string[]>([]);

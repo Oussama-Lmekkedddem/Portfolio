@@ -10,7 +10,7 @@ import {useLanguage} from "@/app/context/LanguageContext";
 const Project: React.FC = () => {
     const { projects, titles } = useLanguage().constants;
     const [selectedProject, setSelectedProject] = useState<ProjectType | null>(null);
-    const projectTitle = titles.find(title => title.mainTitle === 'Portfolio')
+    const projectTitle = titles.find(title => title.id === 'portfolio')
     const groupedProjects: ProjectType[][] = [];
 
     const handleCardClick = (project: ProjectType) => {
@@ -21,8 +21,10 @@ const Project: React.FC = () => {
         setSelectedProject(null);
     };
 
-    for (let i = 0; i < projects.length; i += 3) {
-        groupedProjects.push(projects.slice(i, i + 3));
+    const groupProject = 1;
+
+    for (let i = 0; i < projects.length; i += groupProject) {
+        groupedProjects.push(projects.slice(i, i + groupProject));
     }
 
     return (

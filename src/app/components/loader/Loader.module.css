@@ -23,15 +23,26 @@
     animation: move 3s infinite alternate;
 }
 
-@media (max-width: 1040px) {
-    .preloaderText{
-        font-size: 60px;
-    }
-}
-
 @keyframes move{
     0%{
         clip-path:circle(100px at 0 50%)}
     to{
         clip-path:circle(100px at 100% 50%)}
 }
+
+
+@media (max-width: 1040px) {
+    .preloaderText{
+        font-size: 60px;
+    }
+
+    @keyframes move{
+        0%{
+            clip-path:circle(60px at 0 50%)}
+        to{
+            clip-path:circle(60px at 100% 50%)}
+    }
+}
+
+
+

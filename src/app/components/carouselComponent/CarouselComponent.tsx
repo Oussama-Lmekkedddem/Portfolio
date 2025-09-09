@@ -28,8 +28,55 @@ const CarouselComponent: React.FC<Props> = ({ groupedProjects, handleCardClick }
         }
     };
 
+    // --- swipe support (mobile-first) ---
+    const SWIPE_THRESHOLD = 50; // px
+    const startXY = useRef<{ x: number; y: number } | null>(null);
+    const dragging = useRef(false);
+
+    const isMobile = () =>
+        typeof window !== "undefined" ? window.innerWidth < 640 : true;
+
+    const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+        if (!isMobile()) return;
+        dragging.current = true;
+        (e.currentTarget as HTMLElement).setPointerCapture?.(e.pointerId);
+        startXY.current = { x: e.clientX, y: e.clientY };
+    };
+
+    const onPointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+        if (!isMobile() || !dragging.current || !startXY.current) return;
+        const dx = e.clientX - startXY.current.x;
+        const dy = e.clientY - startXY.current.y;
+        dragging.current = false;
+        startXY.current = null;
+
+        // ignore mostly-vertical gestures
+        if (Math.abs(dx) < Math.abs(dy)) return;
+
+        if (dx <= -SWIPE_THRESHOLD) {
+            // swipe left → next
+            setActiveItem((prev) => (prev === totalItems ? 1 : prev + 1));
+        } else if (dx >= SWIPE_THRESHOLD) {
+            // swipe right → prev
+            setActiveItem((prev) => (prev === 1 ? totalItems : prev - 1));
+        }
+    };
+
+    const onPointerCancel = onPointerUp;
+    const onPointerMove = () => {}; // no-op (we decide on release only)
+    const groupProject = 1;
+
     return (
-        <div className="mt-4" onKeyDown={handleKeyPress} tabIndex={0}>
+        <div
+            className="mt-4"
+            onKeyDown={handleKeyPress}
+            tabIndex={0}
+            onPointerDown={onPointerDown}
+            onPointerMove={onPointerMove}
+            onPointerUp={onPointerUp}
+            onPointerCancel={onPointerCancel}
+            style={{touchAction: "pan-y"}}
+        >
             <TECarousel ref={carouselRef}>
                 {groupedProjects.map((group, index) => (
                     <TECarouselItem
@@ -42,11 +89,11 @@ const CarouselComponent: React.FC<Props> = ({ groupedProjects, handleCardClick }
                         <div className="flex flex-wrap justify-center items-center gap-10">
                             {group.map((project, i) => (
                                 <div
-                                    key={`project-${index * 3 + i}`}
+                                    key={`project-${index * groupProject + i}`}
                                     onClick={() => handleCardClick(project)}
                                     style={{cursor: 'pointer'}}
                                 >
-                                    <ProjectCard index={index * 3 + i} project={project}/>
+                                    <ProjectCard index={index * groupProject + i} project={project}/>
                                 </div>
                             ))}
                         </div>
@@ -54,11 +101,11 @@ const CarouselComponent: React.FC<Props> = ({ groupedProjects, handleCardClick }
                 ))}
             </TECarousel>
 
-            <div className="absolute top-1/7 left-1/2 transform -translate-x-1/2 flex gap-2 mb-3">
+            <div className="absolute top-1/7 left-1/2 transform -translate-x-1/2 flex gap-1.5 mb-3">
                 {groupedProjects.map((group, index) => (
                     <span
                         key={index}
-                        className={`block h-1 w-8 cursor-pointer rounded-2xl transition-all ${
+                        className={`block h-1 w-2 cursor-pointer rounded-2xl transition-all ${
                             activeItem === index + 1 ? "bg-white" : "bg-white/50"
                         }`}
                         onClick={() => setActiveItem(index + 1)}

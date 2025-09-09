@@ -9,6 +9,10 @@ import {SectionWrapper} from "@/app/hooks";
 import {Experience as Expert, Title as Til} from "@/app/types";
 import "@/app/pages/experience/Experience.css"
 import {useLanguage} from "@/app/context/LanguageContext";
+import { useIsMobile } from "@/app/hooks/useIsMobile";
+
+
+
 const Experience: React.FC = () => {
     const { titles, experiences } = useLanguage().constants;
     useEffect(() => {
@@ -21,15 +25,26 @@ const Experience: React.FC = () => {
         removeHiddenClass();
     }, []);
 
-    const experienceTitle = titles.find(title => title.mainTitle === 'Resume')
+    const experienceTitle = titles.find(title => title.id === 'resume');
+
+
+
+    const Divider = () => {
+        const isMobile = useIsMobile(); // true if < 640px
+        if (isMobile) return null;
+        return (
+            <div className="h-[68%] w-[3px] bg-white absolute top-[16%] left-[50%]" />
+        );
+    };
+
     return (
-        <section className={`bgGrad1 w-full sm:px-12 px-6 sm:py-12 py-16`}>
+        <section className={`bgGrad1 w-full px-4 md:px-8 py-10 sm:py-12`}>
             <div className={`relative w-full max-w-7xl mx-auto`}>
                 <Title title={experienceTitle as Til} />
-                <div className='mt-20 flex flex-col'>
+                <div className='mt-10 md:mt-16 flex flex-col'>
                     <motion.div
                         variants={fadeIn("up", "", 0.1, 1)}>
-                        <div className="h-[68%] w-[3px] bg-white absolute top-[16%] left-[50%] hidden lg:block"/>
+                        <Divider/>
                         <VerticalTimeline>
                             {experiences.map((experience, index) => (
                                 <ExperienceCard

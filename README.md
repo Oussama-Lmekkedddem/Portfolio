@@ -25,7 +25,7 @@ This project uses **Next.js** and **EmailJS**. You need a local env file and an 
 
 ```bash
 # Recipient (public at runtime)
-NEXT_PUBLIC_CONTACT_TO_EMAIL=you@newdomain.com
+NEXT_PUBLIC_CONTACT_TO_EMAIL=xxx@xxx.xx
 
 # (Optional but recommended to avoid hardcoding)
 NEXT_PUBLIC_EMAILJS_SERVICE_ID=service_xxx

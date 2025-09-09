@@ -79,35 +79,16 @@ const personnelInfos = {
         'Freelancer'
     ],
     description: 'Motivated Software Engineer (State-Certified), open to professional opportunities.',
-    resume: 'https://drive.google.com/file/d/1FPRUjnaOTfLFQ7fI2qP7WaJsX_i_gQsr/view?usp=sharing'
+    resume: 'https://drive.google.com/file/d/1FPRUjnaOTfLFQ7fI2qP7WaJsX_i_gQsr/view?usp=sharing',
+    welcome: 'Welcome'
 };
 
 const titles = [
-    {
-        mainTitle: 'About Me',
-        subTitle: 'Who Am I',
-        description: 'Learn about my background and interests.'
-    },
-    {
-        mainTitle: 'Services',
-        subTitle: 'What I Do',
-        description: 'Discover the services I offer and my areas of expertise.'
-    },
-    {
-        mainTitle: 'Portfolio',
-        subTitle: 'My Projects',
-        description: 'Explore my past projects and see my work.'
-    },
-    {
-        mainTitle: 'Resume',
-        subTitle: 'My Experience',
-        description: 'View my professional experience and skills.'
-    },
-    {
-        mainTitle: 'Contact',
-        subTitle: 'Get in Touch',
-        description: 'Reach out to me for inquiries and collaborations.'
-    }
+    { id: 'about',     mainTitle: 'About Me',  subTitle: 'Who Am I',        description: 'Learn about my background and interests.' },
+    { id: 'services',  mainTitle: 'Services',  subTitle: 'What I Do',        description: 'Discover the services I offer and my areas of expertise.' },
+    { id: 'portfolio', mainTitle: 'Portfolio', subTitle: 'My Projects',      description: 'Explore my past projects and see my work.' },
+    { id: 'resume',    mainTitle: 'Resume',    subTitle: 'My Experience',    description: 'View my professional experience and skills.' },
+    { id: 'contact',   mainTitle: 'Contact',   subTitle: 'Get in Touch',     description: 'Reach out to me for inquiries and collaborations.' },
 ];
 
 const educations = [
@@ -149,24 +130,8 @@ const technologies = [
         icon: spring,
     },
     {
-        name: "ASP.Net",
-        icon: aspnet,
-    },
-    {
-        name: "laravel",
-        icon: laravel,
-    },
-    {
-        name: "apis",
-        icon: apis,
-    },
-    {
         name: "React JS",
         icon: reactjs,
-    },
-    {
-        name: "react native",
-        icon: reactNative,
     },
     {
         name: "angular",
@@ -189,8 +154,24 @@ const technologies = [
         icon: linux,
     },
     {
+        name: "react native",
+        icon: reactNative,
+    },
+    {
         name: "database",
         icon: database,
+    },
+    {
+        name: "ASP.Net",
+        icon: aspnet,
+    },
+    {
+        name: "laravel",
+        icon: laravel,
+    },
+    {
+        name: "apis",
+        icon: apis,
     },
     {
         name: "odoo",
